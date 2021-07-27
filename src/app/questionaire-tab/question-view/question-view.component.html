@@ -1,0 +1,11 @@
+<div class="ion-padding-top">{{question.Text}}</div>
+<ng-container *ngIf="question.QuestionType === QUESTION_TYPE_ENUM.PercentSlider">
+  <ion-range [max]="100" [min]="0" [pin]="true" [snaps]="true" [step]="10" [ticks]="true" [(ngModel)]="value" (ionChange)="onValueChange()">
+    <ion-label slot="start">0%</ion-label>
+    <ion-label slot="end">100%</ion-label>
+    <ion-label slot="end" class="result">
+      <ng-container *ngIf="value">{{value}} %</ng-container>
+    </ion-label>
+  </ion-range>
+</ng-container>
+<hr>

@@ -1,0 +1,20 @@
+.md ion-slides {
+   height: calc(100% - 60px);
+}
+.ios ion-slides {
+   height: calc(100% - 75px);
+}
+.swiper-slide {
+  height: auto;
+  display: block;
+  text-align: left;
+}
+.controlButtons {
+   text-align: center;
+   overflow-x: hidden;
+   white-space: nowrap;
+
+   ion-button {
+      opacity: 0;
+   }
+}

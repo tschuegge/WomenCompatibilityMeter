@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-slides [pager]="true" (ionSlideDidChange)="slideHasChanged()" [options]="{allowTouchMove:false}">
+    <ion-slide *ngFor="let questionGroup of questionGroups">
+      <ion-content class="ion-padding-horizontal ion-padding-bottom" [fullscreen]="true">
+        <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>
+      </ion-content>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="controlButtons">
+    <ion-button color="secondary" (click)="gotoPrevSlide()" [@ControlButtonSize]="animationStateBackButton">
+      <ion-icon name="arrow-back" slot="start"></ion-icon>
+      Zurück
+    </ion-button>
+    <ion-button color="primary" (click)="gotoNextSlide()" [@ControlButtonSize]="animationStateNextButton">
+      <ion-icon name="arrow-forward" slot="start"></ion-icon>
+      Weiter
+    </ion-button>
+    <ion-button color="success" [@ControlButtonSize]="animationStateResultButton">
+      <ion-icon name="golf-outline" slot="start"></ion-icon>
+      Auswertung
+    </ion-button>
+  </div>
+
+  <!--
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" *ngIf="!isFirstSlide">
+        <ion-button color="secondary" (click)="gotoPrevSlide()">
+          <ion-icon name="arrow-back" slot="start"></ion-icon>
+          Zurück
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf="!isLastSlide">
+        <ion-button color="primary" (click)="gotoNextSlide()">
+          <ion-icon name="arrow-forward" slot="start"></ion-icon>
+          Weiter
+        </ion-button>
+      </ion-col>
+      <ion-col [size]="(isLastSlide || isFirstSlide) ? 9 : 6" *ngIf="isCompleted">
+        <ion-button color="success">
+          <ion-icon name="golf-outline" slot="start"></ion-icon>
+          Auswertung
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  -->
+
+</ion-content>
