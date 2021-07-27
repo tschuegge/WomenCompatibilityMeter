@@ -1,4 +1,8 @@
+import { Answer } from "./answer";
+import { Question } from "./question";
+
 export interface Result {
-  Answer: string | number;
-  Points: number;
+  Question: Question;
+  ResultetAnswer: Answer;
+  ResultetValue: number | string;
 }

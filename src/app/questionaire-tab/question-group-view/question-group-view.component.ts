@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuestionGroup } from 'src/app/shared/model/QuestionGroup';
+import { QuestionGroup } from 'src/app/shared/model/question-group';
 
 @Component({
   selector: 'app-question-group-view',

@@ -1,3 +1,4 @@
 export enum QuestionTypeEnum {
-  PercentSlider
+  PercentSlider,
+  RadioGroup
 }

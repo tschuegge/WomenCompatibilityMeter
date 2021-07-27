@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, ToastController } from '@ionic/angular';
+import { IonSlides, ModalController, ToastController } from '@ionic/angular';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
-import { QuestionGroup } from '../shared/model/QuestionGroup';
+import { QuestionGroup } from '../shared/model/question-group';
 import { QuestionSourceService } from '../shared/question-source.service';
 import { ResultService } from '../shared/result.service';
+import { ResultsModalPage } from './results-modal/results-modal.page';
 
 @Component({
   selector: 'app-questionaire-tab',
@@ -35,11 +36,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   questionGroups: Array<QuestionGroup>;
   title: string;
   currentGroup: number;
-  /*
-  isFirstSlide = true;
-  isLastSlide = false;
-  isCompleted = false;
-  */
 
   animationStateBackButton = "";
   animationStateNextButton = "";
@@ -50,7 +46,8 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private questionSourceService: QuestionSourceService,
     private resultService: ResultService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private modalController: ModalController
   ) { }
 
   @ViewChild(IonSlides) slider: IonSlides;
@@ -58,9 +55,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.questionGroups = this.questionSourceService.QuestionGroups;
 
-    this.questionSourceService.QuestionsChangedObservable.pipe(
+    this.resultService.ResultSavedObservable.pipe(
       takeUntil(this.unsubscribe$)
-    ).subscribe(() => this.slideHasChanged());
+    ).subscribe(() => this.setCurrentControlButtons());
   }
 
   ngOnDestroy(): void {
@@ -69,18 +66,16 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.slideHasChanged();
+    this.setCurrentSlide();
   }
 
-  async slideHasChanged(): Promise<void> {
-    this.slider.update();
+  async setCurrentSlide(): Promise<void> {
     this.currentGroup = await this.slider.getActiveIndex();
     this.title = this.questionGroups[this.currentGroup].GroupName;
-    /*
-    this.isFirstSlide = await this.slider.isBeginning();
-    this.isLastSlide = await this.slider.isEnd();
-    this.isCompleted = this.resultService.areAllGroupsCompleted();
-    */
+    this.setCurrentControlButtons();
+  }
+
+  async setCurrentControlButtons(): Promise<void> {
     if (await this.slider.isBeginning()) {
       this.animationStateBackButton = "hidden";
       this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
@@ -93,7 +88,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
       this.animationStateBackButton = "visible-25";
       this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-75";
       this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-50" : "hidden";
-
     }
   }
 
@@ -113,6 +107,13 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
   gotoPrevSlide(): void {
     this.slider.slidePrev();
+  }
+
+  async gotoResults(): Promise<void> {
+    const modal = await this.modalController.create({
+      component: ResultsModalPage
+    });
+    modal.present();
   }
 
 }

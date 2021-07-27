@@ -1,5 +1,7 @@
 <div class="ion-padding-top">{{question.Text}}</div>
-<ng-container *ngIf="question.QuestionType === QUESTION_TYPE_ENUM.PercentSlider">
+<ng-container [ngSwitch]="question.QuestionType">
+
+  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.PercentSlider">
   <ion-range [max]="100" [min]="0" [pin]="true" [snaps]="true" [step]="10" [ticks]="true" [(ngModel)]="value" (ionChange)="onValueChange()">
     <ion-label slot="start">0%</ion-label>
     <ion-label slot="end">100%</ion-label>
@@ -7,5 +9,18 @@
       <ng-container *ngIf="value">{{value}} %</ng-container>
     </ion-label>
   </ion-range>
+  </ng-container>
+  
+  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.RadioGroup">
+    <ion-list>
+      <ion-radio-group [(ngModel)]="value" (ionChange)="onValueChange()">
+        <ion-item *ngFor="let answer of question.Answers">
+          <ion-label>{{answer.Answer}}</ion-label>
+          <ion-radio slot="start" value="{{answer.Answer}}"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </ng-container>
+
 </ng-container>
 <hr>

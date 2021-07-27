@@ -1,11 +1,10 @@
-import { QuestionTypeEnum } from "./QuestionTypeEnum";
-import { Result } from "./Result";
-import { ResultTypeEnum } from "./ResultTypeEnum";
+import { QuestionTypeEnum } from "./question-type-enum";
+import { Answer } from "./answer";
+import { AnswerTypeEnum } from "./answer-type-enum";
 
 export interface Question {
   Text: string;
   QuestionType: QuestionTypeEnum;
-  Results: Array<Result>;
-  ResultType: ResultTypeEnum;
-  ResultedValue?: number | string | boolean;
+  Answers: Array<Answer>;
+  AnswerType: AnswerTypeEnum;
 }

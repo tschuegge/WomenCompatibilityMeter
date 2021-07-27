@@ -15,6 +15,6 @@
    white-space: nowrap;
 
    ion-button {
-      opacity: 0;
+      opacity: 0; // Prevents button flickering before animations are loaded
    }
 }

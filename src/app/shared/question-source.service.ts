@@ -1,68 +1,46 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { QuestionGroup } from './model/QuestionGroup';
-import { QuestionTypeEnum } from './model/QuestionTypeEnum';
-import { ResultTypeEnum } from './model/ResultTypeEnum';
+import { QUESTIONS_CONFIG } from 'src/config/questions.config';
+import { Question } from './model/question';
+import { QuestionGroup } from './model/question-group';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionSourceService {
 
-  private questionGroupSource: Array<QuestionGroup> = [
-    {
-      GroupName: 'Teilzeit',
-      Questions: [
-        {
-          Text: 'Zu welchem Arbeitspensum in Prozent müssen Mitarbeitende mindestens angestellt sein?',
-          QuestionType: QuestionTypeEnum.PercentSlider,
-          Results: [{ Answer: 80, Points: 1 }, { Answer: 60, Points: 3 }],
-          ResultType: ResultTypeEnum.EqualOrLess
-        },
-        {
-          Text: 'Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?',
-          QuestionType: QuestionTypeEnum.PercentSlider,
-          Results: [{ Answer: 80, Points: 1 }, { Answer: 60, Points: 3 }],
-          ResultType: ResultTypeEnum.EqualOrLess
-        }
-      ]
-    },
-    {
-      GroupName: 'Frageblock 2',
-      Questions: [
-        {
-          Text: 'Frage',
-          QuestionType: QuestionTypeEnum.PercentSlider,
-          Results: [{ Answer: 80, Points: 1 }, { Answer: 60, Points: 3 }],
-          ResultType: ResultTypeEnum.EqualOrLess
-        }
-      ]
-    },
-    {
-      GroupName: 'Frageblock 3',
-      Questions: [
-        {
-          Text: 'Frage',
-          QuestionType: QuestionTypeEnum.PercentSlider,
-          Results: [{ Answer: 80, Points: 1 }, { Answer: 60, Points: 3 }],
-          ResultType: ResultTypeEnum.EqualOrLess
-        }
-      ]
-    }
-  ];
+  private questionGroupSource: Array<QuestionGroup> = QUESTIONS_CONFIG
 
-  private questionsChanged$ = new BehaviorSubject<void>(null);
-
+  /**
+   * All Question Groups with questions
+   */
   get QuestionGroups() {
     return this.questionGroupSource;
   }
 
-  get QuestionsChangedObservable() {
-    return this.questionsChanged$.asObservable();
+  /**
+   * Returns index of Question Group with given question
+   * @param question Question of Question Group to find
+   * @returns Index of Question Group with given question
+   */
+  getQuestionGroupIndexByQuestion(question: Question): number {
+    const groupIndex = this.questionGroupSource.findIndex(questionGroup => {
+      return questionGroup.Questions.find(questionInGroup => questionInGroup === question) !== undefined
+    });
+    if (groupIndex === -1) {
+      throw new Error("Question not found in Question Group");
+    }
+    return groupIndex;
   }
 
-  fireQuestionsChanged(): void {
-    this.questionsChanged$.next();
+  /**
+   * Returns index of question in question group
+   * @param question Question to find
+   * @returns Index of question in question group
+   */
+  getQuestionIndexInQuestionGroup(question: Question): number {
+    const groupIndex = this.getQuestionGroupIndexByQuestion(question);
+    return this.questionGroupSource[groupIndex].Questions.findIndex(questionInGroup => questionInGroup === question);
+    // no check of 1- (not found) needed, cause getQuestionGroupIndexByQuestion fails if question is unknown
   }
 
 }
