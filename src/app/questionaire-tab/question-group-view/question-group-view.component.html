@@ -1,3 +1,14 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      {{questionGroup.GroupName}}
+    </ion-card-title>
+    <ion-card-subtitle>
+      {{questionGroup.Description}}
+    </ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+
 <ion-card *ngFor="let question of questionGroup.Questions">
   <ion-card-content>
     <app-question-view [question]="question"></app-question-view>

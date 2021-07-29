@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/questionaire-tab" text="Fragebogen"></ion-back-button>
     </ion-buttons>
     <ion-title>Ergebnisse</ion-title>
   </ion-toolbar>
@@ -9,8 +9,33 @@
 
 <ion-content [fullscreen]="true">
 
+  <ion-card>
+  
+    <ion-card-header>
+      <ion-card-title>Bewertung</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon class="resultIcon" color="success" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+          </ion-col>
+          <ion-col size="10">
+            <h1>{{(TotalRating.currentPoints/TotalRating.totalPoints) | percent}}</h1>
+            <p>Erläuterungen zu dieser Bewertung befinden sich bei den einzelnen Themenbereichen.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  
+  </ion-card>
+
   <ng-container *ngFor="let resultGroup of ResultGroup; index as groupNo">
     <ion-card>
+
       <ion-card-header>
         <ion-card-title>{{resultGroup.QuestionGroup.GroupName}}</ion-card-title>
         <ion-card-subtitle>{{resultGroup.QuestionGroup.Description}}</ion-card-subtitle>
@@ -26,7 +51,10 @@
             </ion-col>
             <ion-col size="10">
               <ng-container *ngFor="let result of resultGroup.Results">
-                <p *ngIf="result.ResultedAnswer.Hint">{{result.ResultedAnswer.Hint}}</p>
+                <ng-container *ngIf="result.ResultedAnswer.Hint">
+                  <p>{{result.ResultedAnswer.Hint}}</p>
+                  <hr>
+                </ng-container>
               </ng-container>
               <p *ngIf="!resultGroupContainsHint(resultGroup)">Herzlichen Glückwunsch, in diesem Bereich sind keine weiteren Tipps vorhanden.</p>
             </ion-col>

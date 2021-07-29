@@ -1,13 +1,10 @@
-hr {
-  border-top: 1px solid var(--ion-color-light-shade);
-}
-.result {
+.resultLabel {
   font-weight: bold;
   width: 60px;
   text-align: right;
   font-size: 1.2em;
   color: black;
 }
-.md .result {
+.md .resultLabel {
   font-size: 1.4em;
 }

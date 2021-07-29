@@ -39,7 +39,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Verwendet die Firma in Stellenausschreibungen Phrasen wie: "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklerungleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams"?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Ja', Rating: AnswerRatingEnum.Bad, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Verkaufsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Verkaufsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.Equal
@@ -48,8 +48,8 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, nahe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt.',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Ja', Rating: AnswerRatingEnum.Bad, Hint: '' },
-          { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: 'In Zeiten des Fachkräftemangels bewirbt sich eine Fachkraft nicht nur beim Unternehmen, sondern auch das Unternehmen bei der Fachkraft.' }
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
+          { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'In Zeiten des Fachkräftemangels bewirbt sich eine Fachkraft nicht nur beim Unternehmen, sondern auch das Unternehmen bei der Fachkraft.' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },

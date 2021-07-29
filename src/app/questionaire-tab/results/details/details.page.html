@@ -1,12 +1,68 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/questionaire-tab/results" text="Ergebnisse"></ion-back-button>
     </ion-buttons>
-    <ion-title>Details {{resultGroup?.QuestionGroup.GroupName}}</ion-title>
+    <ion-title>Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
+  <ion-card>
+  
+    <ion-card-header>
+      <ion-card-title>{{resultGroup.QuestionGroup.GroupName}}</ion-card-title>
+      <ion-card-subtitle>{{resultGroup.QuestionGroup.Description}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+          </ion-col>
+          <ion-col size="10">
+            <h1>{{(resultGroup.GroupPoints / resultGroup.TotalPoints) | percent}}</h1>
+            <p>Erläuterungen zu dieser Bewertung befinden sich bei den einzelnen Fragen.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  
+  </ion-card>
+  
+  <ion-card *ngFor="let result of resultGroup.Results;index as index">
+    <ion-card-header>
+      <ion-card-title>Frage {{index + 1}}</ion-card-title>
+      <ion-card-subtitle>{{result.Question.Text}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon class="resultIcon" color="success" *ngIf="result.ResultedAnswer.Rating  == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="result.ResultedAnswer.Rating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="result.ResultedAnswer.Rating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+          </ion-col>
+          <ion-col size="10">
+            <h2>Gegebene Antwort</h2>
+            <ng-container [ngSwitch]="result.Question.QuestionType">
+              <p *ngSwitchCase="QUESTION_TYPE_ENUM.PercentSlider">{{result.ResultetValue}}%</p>
+              <p *ngSwitchCase="QUESTION_TYPE_ENUM.RadioGroup">{{result.ResultetValue}}</p>
+            </ng-container>
+            <ng-container *ngIf="result.ResultedAnswer.Hint">
+              <hr>
+              <h2>Denkanstoss</h2>
+              <p>{{result.ResultedAnswer.Hint}}</p>
+            </ng-container>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  
+  </ion-card>
 </ion-content>

@@ -5,5 +5,7 @@ import { Result } from "./result";
 export interface ResultGroup {
   QuestionGroup: QuestionGroup;
   Results: Array<Result>;
-  GroupRating: AnswerRatingEnum
+  GroupRating: AnswerRatingEnum;
+  TotalPoints: number;
+  GroupPoints: number;
 }

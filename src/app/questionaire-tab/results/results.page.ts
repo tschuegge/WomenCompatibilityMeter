@@ -12,8 +12,6 @@ import { ResultService } from 'src/app/shared/result.service';
 })
 export class ResultsPage implements OnInit {
 
-  errorNotCompleted = false;
-
   ANSWER_RATING_ENUM = AnswerRatingEnum;
 
   constructor(
@@ -50,5 +48,7 @@ export class ResultsPage implements OnInit {
     return resultGroup.Results.find(r => r.ResultedAnswer.Hint.length > 0) !== undefined;
   }
 
-  // TODO Show total ranking
+  get TotalRating() {
+    return this.resultService.TotalRating;
+  }
 }

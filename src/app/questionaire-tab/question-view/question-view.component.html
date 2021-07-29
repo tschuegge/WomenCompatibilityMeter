@@ -5,7 +5,7 @@
   <ion-range [max]="100" [min]="0" [pin]="true" [snaps]="true" [step]="10" [ticks]="true" [(ngModel)]="value" (ionChange)="onValueChange()" mode="ios">
     <ion-label slot="start">0%</ion-label>
     <ion-label slot="end">100%</ion-label>
-    <ion-label slot="end" class="result">
+    <ion-label slot="end" class="resultLabel">
       <ng-container *ngIf="value">{{value}}%</ng-container>
     </ion-label>
   </ion-range>

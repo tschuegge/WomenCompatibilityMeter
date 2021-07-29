@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Answer } from './model/answer';
 import { AnswerRatingEnum } from './model/answer-rating-enum';
 import { AnswerTypeEnum } from './model/answer-type-enum';
 import { Question } from './model/question';
 import { Result } from './model/result';
 import { ResultGroup } from './model/result-group';
+import { TotalRating } from './model/total-rating';
 import { QuestionSourceService } from './question-source.service';
 
 @Injectable({
@@ -16,14 +17,12 @@ export class ResultService {
   private resultGroup = new Array<ResultGroup>();
   private resultSaved$ = new Subject<void>();
 
+  private totalRating: TotalRating = { currentPoints: 0, totalPoints: 0, currentRating: AnswerRatingEnum.Bad };
+
   constructor(private questionSourceService: QuestionSourceService) {
-
-    // HACK
-    //this.saveResult(questionSourceService.QuestionGroups[0].Questions[0], 60);
-    //this.saveResult(questionSourceService.QuestionGroups[0].Questions[1], 60);
-    //this.saveResult(questionSourceService.QuestionGroups[1].Questions[0], "Ja");
-    //this.saveResult(questionSourceService.QuestionGroups[1].Questions[1], "Nein");
-
+    this.questionSourceService.QuestionGroups.forEach(group => {
+      this.totalRating.totalPoints += group.Questions.length * AnswerRatingEnum.Good;
+    });
   }
 
   /**
@@ -40,25 +39,31 @@ export class ResultService {
     return this.resultGroup;
   }
 
+  get TotalRating() {
+    return this.totalRating;
+  }
+
   /**
    * Stores a new result from user for a question
    * @param question Question that was answered
    * @param result Result from user
    */
   saveResult(question: Question, result: number | string): void {
-    const groupId = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
+    const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
 
     // Insert Result Group if needed
-    if (!this.resultGroup[groupId]) {
-      this.resultGroup[groupId] = {
-        QuestionGroup: this.questionSourceService.QuestionGroups[groupId],
+    if (!this.resultGroup[groupNo]) {
+      this.resultGroup[groupNo] = {
+        QuestionGroup: this.questionSourceService.QuestionGroups[groupNo],
         Results: new Array<Result>(),
-        GroupRating: AnswerRatingEnum.Bad
+        GroupRating: AnswerRatingEnum.Bad,
+        GroupPoints: 0,
+        TotalPoints: this.questionSourceService.QuestionGroups[groupNo].Questions.length * AnswerRatingEnum.Good
       };
     }
 
     // Determine Answer
-    const questionId = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
+    const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
     let resultedanswer: Answer;
     switch (question.AnswerType) {
       case AnswerTypeEnum.EqualOrLess:
@@ -73,11 +78,18 @@ export class ResultService {
       throw new Error(`Userinput matches to no answer: ${result}`);
     }
 
-    // Set Result and total group Rating
-    this.resultGroup[groupId].Results[questionId] = { Question: question, ResultetValue: result, ResultedAnswer: resultedanswer };
-    let totalPoints = 0;
-    this.resultGroup[groupId].Results.forEach(r => totalPoints += r.ResultedAnswer.Rating);
-    this.resultGroup[groupId].GroupRating = (totalPoints % AnswerRatingEnum.Good === 0) ? AnswerRatingEnum.Good : (totalPoints % AnswerRatingEnum.Medium === 0) ? AnswerRatingEnum.Medium : AnswerRatingEnum.Bad;
+    // Set result and total group rating
+    this.resultGroup[groupNo].Results[questionNo] = { Question: question, ResultetValue: result, ResultedAnswer: resultedanswer };
+    this.resultGroup[groupNo].GroupPoints = this.determinePointsInGroup(groupNo);
+    this.resultGroup[groupNo].GroupRating = this.determineRating(this.resultGroup[groupNo].GroupPoints);
+
+    // Set total points and total rating
+    this.totalRating.currentPoints = 0;
+    for (let groupNo of this.resultGroup.keys()) {
+      this.totalRating.currentPoints += this.determinePointsInGroup(groupNo);
+    }
+    this.totalRating.currentRating = this.determineRating(this.totalRating.currentPoints);
+
     this.resultSaved$.next();
   }
 
@@ -99,8 +111,8 @@ export class ResultService {
    * @returns true if all questions of all groups are answered
    */
   areAllGroupsCompleted(): boolean {
-    for (let i = 0; i < this.questionSourceService.QuestionGroups.length; i++) {
-      if (!this.isGroupCompleted(i)) {
+    for (let groupNo of this.questionSourceService.QuestionGroups.keys()) {
+      if (!this.isGroupCompleted(groupNo)) {
         return false;
       }
     }
@@ -118,4 +130,13 @@ export class ResultService {
     return this.resultGroup[groupNo]?.Results[questionNo];
   }
 
+  private determineRating(points: number): AnswerRatingEnum {
+    return (points % AnswerRatingEnum.Good === 0) ? AnswerRatingEnum.Good : (points % AnswerRatingEnum.Medium === 0) ? AnswerRatingEnum.Medium : AnswerRatingEnum.Bad;
+  }
+
+  private determinePointsInGroup(groupNo: number): number {
+    let totalPoints = 0;
+    this.resultGroup[groupNo].Results.forEach(r => totalPoints += r.ResultedAnswer.Rating);
+    return totalPoints;
+  }
 }

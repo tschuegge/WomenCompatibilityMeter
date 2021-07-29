@@ -33,7 +33,6 @@ import { ResultService } from '../shared/result.service';
 export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
   questionGroups: Array<QuestionGroup>;
-  title: string;
   currentGroup: number;
 
   animationStateBackButton = "";
@@ -70,7 +69,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
   async setCurrentSlide(): Promise<void> {
     this.currentGroup = await this.slider.getActiveIndex();
-    this.title = this.questionGroups[this.currentGroup].GroupName;
     this.setCurrentControlButtons();
   }
 
