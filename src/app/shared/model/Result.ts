@@ -3,6 +3,6 @@ import { Question } from "./question";
 
 export interface Result {
   Question: Question;
-  ResultetAnswer: Answer;
+  ResultedAnswer: Answer;
   ResultetValue: number | string;
 }

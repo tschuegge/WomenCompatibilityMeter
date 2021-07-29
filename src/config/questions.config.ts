@@ -6,6 +6,7 @@ import { AnswerRatingEnum } from 'src/app/shared/model/answer-rating-enum';
 export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
   {
     GroupName: 'Teilzeit',
+    Description: 'Das Anbieten von Teilzeitpensen ist ein wichtiger Faktor um ein Unternehmen für Frauen attraktiv zu gestalten.',
     Questions: [
       {
         Text: 'Zu welchem Arbeitspensum in Prozent müssen Mitarbeitende mindestens angestellt sein?',
@@ -30,7 +31,8 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
     ]
   },
   {
-    GroupName: 'Genderneutrale Stellenausschreibung',
+    GroupName: 'Stellenausschreibung',
+    Description: 'Genderneutrale Stellenausschreibungen wirken auf eine grössere Gruppe von Menschen interessant und schrecken besonders Frauen weniger ab.',
     // Source: https://www.fho.ch/fileadmin/pdf/service/fho_gender_leitfaden_stelleninserate.pdf
     Questions: [
       {

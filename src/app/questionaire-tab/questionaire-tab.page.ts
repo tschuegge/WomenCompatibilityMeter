@@ -1,12 +1,11 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, ModalController, ToastController } from '@ionic/angular';
+import { IonSlides, NavController, ToastController } from '@ionic/angular';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
 import { QuestionGroup } from '../shared/model/question-group';
 import { QuestionSourceService } from '../shared/question-source.service';
 import { ResultService } from '../shared/result.service';
-import { ResultsModalPage } from './results-modal/results-modal.page';
 
 @Component({
   selector: 'app-questionaire-tab',
@@ -47,7 +46,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     private questionSourceService: QuestionSourceService,
     private resultService: ResultService,
     private toastController: ToastController,
-    private modalController: ModalController
+    private navController: NavController
   ) { }
 
   @ViewChild(IonSlides) slider: IonSlides;
@@ -107,13 +106,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
   gotoPrevSlide(): void {
     this.slider.slidePrev();
-  }
-
-  async gotoResults(): Promise<void> {
-    const modal = await this.modalController.create({
-      component: ResultsModalPage
-    });
-    modal.present();
   }
 
 }

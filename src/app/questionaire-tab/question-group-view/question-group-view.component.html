@@ -1,1 +1,5 @@
-<app-question-view *ngFor="let question of questionGroup.Questions" [question]="question"></app-question-view>
+<ion-card *ngFor="let question of questionGroup.Questions">
+  <ion-card-content>
+    <app-question-view [question]="question"></app-question-view>
+  </ion-card-content>
+</ion-card>

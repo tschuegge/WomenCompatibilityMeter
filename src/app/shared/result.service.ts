@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Answer } from './model/answer';
+import { AnswerRatingEnum } from './model/answer-rating-enum';
 import { AnswerTypeEnum } from './model/answer-type-enum';
 import { Question } from './model/question';
 import { Result } from './model/result';
@@ -15,13 +16,28 @@ export class ResultService {
   private resultGroup = new Array<ResultGroup>();
   private resultSaved$ = new Subject<void>();
 
-  constructor(private questionSourceService: QuestionSourceService) { }
+  constructor(private questionSourceService: QuestionSourceService) {
+
+    // HACK
+    //this.saveResult(questionSourceService.QuestionGroups[0].Questions[0], 60);
+    //this.saveResult(questionSourceService.QuestionGroups[0].Questions[1], 60);
+    //this.saveResult(questionSourceService.QuestionGroups[1].Questions[0], "Ja");
+    //this.saveResult(questionSourceService.QuestionGroups[1].Questions[1], "Nein");
+
+  }
 
   /**
    * Returns Observable that fires every time if a new result was stored
    */
   get ResultSavedObservable() {
     return this.resultSaved$.asObservable();
+  }
+
+  /**
+   * Returns all result groups
+   */
+  get ResultGroups() {
+    return this.resultGroup;
   }
 
   /**
@@ -36,7 +52,8 @@ export class ResultService {
     if (!this.resultGroup[groupId]) {
       this.resultGroup[groupId] = {
         QuestionGroup: this.questionSourceService.QuestionGroups[groupId],
-        Results: new Array<Result>()
+        Results: new Array<Result>(),
+        GroupRating: AnswerRatingEnum.Bad
       };
     }
 
@@ -56,22 +73,25 @@ export class ResultService {
       throw new Error(`Userinput matches to no answer: ${result}`);
     }
 
-    // Set Result
-    this.resultGroup[groupId].Results[questionId] = { Question: question, ResultetValue: result, ResultetAnswer: resultedanswer };
+    // Set Result and total group Rating
+    this.resultGroup[groupId].Results[questionId] = { Question: question, ResultetValue: result, ResultedAnswer: resultedanswer };
+    let totalPoints = 0;
+    this.resultGroup[groupId].Results.forEach(r => totalPoints += r.ResultedAnswer.Rating);
+    this.resultGroup[groupId].GroupRating = (totalPoints % AnswerRatingEnum.Good === 0) ? AnswerRatingEnum.Good : (totalPoints % AnswerRatingEnum.Medium === 0) ? AnswerRatingEnum.Medium : AnswerRatingEnum.Bad;
     this.resultSaved$.next();
   }
 
   /**
    * Check if all questions of a group are answered
-   * @param groupNr Number of Group
+   * @param groupNo Number of Group
    * @returns true if all questions of group are answered
    */
-  isGroupCompleted(groupNr: number): boolean {
-    if (!this.questionSourceService.QuestionGroups[groupNr]) {
+  isGroupCompleted(groupNo: number): boolean {
+    if (!this.questionSourceService.QuestionGroups[groupNo]) {
       throw new Error("Unknown group given");
     }
-    return this.questionSourceService.QuestionGroups[groupNr].Questions.length === this.resultGroup[groupNr]?.Results.length && // counts of questions and results are equal
-      this.resultGroup[groupNr]?.Results.find(result => !result.ResultetAnswer) === undefined; // every result has an answer
+    return this.questionSourceService.QuestionGroups[groupNo].Questions.length === this.resultGroup[groupNo]?.Results.length && // counts of questions and results are equal
+      this.resultGroup[groupNo]?.Results.find(result => !result?.ResultedAnswer) === undefined; // every result has an answer
   }
 
   /**
@@ -85,6 +105,17 @@ export class ResultService {
       }
     }
     return true;
+  }
+
+  /**
+   * Get result for given question
+   * @param question Question
+   * @returns Result or undefined if no answered yet
+   */
+  getResultForQuestion(question: Question): Result {
+    const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
+    const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
+    return this.resultGroup[groupNo]?.Results[questionNo];
   }
 
 }

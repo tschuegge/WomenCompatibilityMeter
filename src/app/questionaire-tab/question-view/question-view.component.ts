@@ -9,14 +9,18 @@ import { ResultService } from 'src/app/shared/result.service';
   templateUrl: './question-view.component.html',
   styleUrls: ['./question-view.component.scss'],
 })
-export class QuestionViewComponent {
+export class QuestionViewComponent implements OnInit {
 
   @Input() question: Question;
   QUESTION_TYPE_ENUM = QuestionTypeEnum;
 
-  value: number;
+  value: number | string;
 
   constructor(private resultService: ResultService) { }
+
+  ngOnInit(): void {
+    this.value = this.resultService.getResultForQuestion(this.question)?.ResultetValue;
+  }
 
   onValueChange(): void {
     this.resultService.saveResult(this.question, this.value);

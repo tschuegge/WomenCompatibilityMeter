@@ -15,7 +15,7 @@ import { ResultService } from './shared/result.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    IonicModule.forRoot({ mode: "md" }),
+    IonicModule.forRoot({ mode: "ios" }),
     AppRoutingModule
   ],
   providers: [

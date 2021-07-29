@@ -8,7 +8,7 @@
 
   <ion-slides [pager]="true" (ionSlideDidChange)="setCurrentSlide()" [options]="{allowTouchMove:false}">
     <ion-slide *ngFor="let questionGroup of questionGroups">
-      <ion-content class="ion-padding-horizontal ion-padding-bottom" [fullscreen]="true">
+      <ion-content class="ion-padding-bottom" [fullscreen]="true">
         <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>
       </ion-content>
     </ion-slide>
@@ -23,7 +23,7 @@
       <ion-icon name="arrow-forward" slot="start"></ion-icon>
       Weiter
     </ion-button>
-    <ion-button color="success" (click)="gotoResults()" [@ControlButtonSize]="animationStateResultButton">
+    <ion-button color="success" [routerLink]="['results']" routerDirection="forward" routerLinkActive="router-link-active" [@ControlButtonSize]="animationStateResultButton">
       <ion-icon name="golf-outline" slot="start"></ion-icon>
       Auswertung
     </ion-button>
