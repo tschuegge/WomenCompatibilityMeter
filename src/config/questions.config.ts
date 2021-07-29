@@ -53,6 +53,31 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
+      {
+        Text: 'Werden die Aufgaben und Anforderungen in Stellenausschreibungen beschreibend formuliert, statt Pflichten und Kompetenzen aufzuzählen?',
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
+          { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'Beschreibende Inserate verhindern, dass Bewerbende Punkt für Punkt als erfüllt oder nicht erfüllt klassifiziert werden. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.' }
+        ],
+        AnswerType: AnswerTypeEnum.Equal
+      }
+    ]
+  },
+  {
+    GroupName: 'Frauenanteil in der Softwareentwicklung',
+    Description: 'Frauen sorgen in Entwicklungsabteilungen für mehr Diversität und einen vielfältigeren Blick auf das Produkt.',
+    Questions: [
+      {
+        Text: 'Wie hoch ist der Frauenanteil in der Softwareentwicklung?',
+        QuestionType: QuestionTypeEnum.PercentSlider,
+        Answers: [
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: 'Die erste Softwareentwicklerin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es schon Frauen gibt. Sobald Frauen in der Softwareentwicklung eingestellt sind, wird es einfacher sein weitere Softwareentwicklerinnen zu finden.' },
+          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: 'Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es schon Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.' },
+          { Answer: 30, Rating: AnswerRatingEnum.Good, Hint: '' }
+        ],
+        AnswerType: AnswerTypeEnum.EqualOrMore
+      }
     ]
   }
 ];

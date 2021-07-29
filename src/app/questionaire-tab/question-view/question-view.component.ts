@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Question } from 'src/app/shared/model/question';
 import { QuestionTypeEnum } from 'src/app/shared/model/question-type-enum';
-import { QuestionSourceService } from 'src/app/shared/question-source.service';
 import { ResultService } from 'src/app/shared/result.service';
 
 @Component({
@@ -11,10 +10,10 @@ import { ResultService } from 'src/app/shared/result.service';
 })
 export class QuestionViewComponent implements OnInit {
 
-  @Input() question: Question;
+  @Input() question!: Question;
   QUESTION_TYPE_ENUM = QuestionTypeEnum;
 
-  value: number | string;
+  value!: number | string;
 
   constructor(private resultService: ResultService) { }
 

@@ -64,10 +64,13 @@ export class ResultService {
 
     // Determine Answer
     const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
-    let resultedanswer: Answer;
+    let resultedanswer: Answer | undefined;
     switch (question.AnswerType) {
       case AnswerTypeEnum.EqualOrLess:
-        resultedanswer = question.Answers.find((answer, index) => <number>result <= <number>answer.Answer && (index === question.Answers.length - 1 || <number>result > <number>question.Answers[index + 1].Answer));
+        resultedanswer = question.Answers.find((answer, index) => result <= answer.Answer && (index === question.Answers.length - 1 || result > question.Answers[index + 1].Answer));
+        break;
+      case AnswerTypeEnum.EqualOrMore:
+        resultedanswer = question.Answers.find((answer, index) => result >= answer.Answer && (index === question.Answers.length - 1 || result < question.Answers[index + 1].Answer));
         break;
       case AnswerTypeEnum.Equal:
         resultedanswer = question.Answers.find(a => a.Answer == result);
@@ -128,6 +131,17 @@ export class ResultService {
     const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
     const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
     return this.resultGroup[groupNo]?.Results[questionNo];
+  }
+
+  /**
+   * Fills all questions with results, only for demonstration and development purposes
+   */
+  autoFillQuestions() {
+    this.saveResult(this.questionSourceService.QuestionGroups[0].Questions[0], 60);
+    this.saveResult(this.questionSourceService.QuestionGroups[0].Questions[1], 80);
+    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[0], "Nein");
+    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[1], "Ja");
+    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[2], "Ja");
   }
 
   private determineRating(points: number): AnswerRatingEnum {

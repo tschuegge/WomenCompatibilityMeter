@@ -30,7 +30,7 @@ export class ResultsPage implements OnInit {
           text: "Ok",
           handler: () => this.navController.navigateBack("/")
         }],
-        translucent: true
+        translucent: false
       });
       alert.present();
     }

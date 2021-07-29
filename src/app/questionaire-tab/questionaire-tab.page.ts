@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, NavController, ToastController } from '@ionic/angular';
+import { IonSlides, ToastController } from '@ionic/angular';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
@@ -33,7 +33,7 @@ import { ResultService } from '../shared/result.service';
 export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
   questionGroups: Array<QuestionGroup>;
-  currentGroup: number;
+  currentGroup = 0;
 
   animationStateBackButton = "";
   animationStateNextButton = "";
@@ -44,15 +44,14 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     private questionSourceService: QuestionSourceService,
     private resultService: ResultService,
-    private toastController: ToastController,
-    private navController: NavController
-  ) { }
+    private toastController: ToastController
+  ) {
+    this.questionGroups = this.questionSourceService.QuestionGroups;
+  }
 
-  @ViewChild(IonSlides) slider: IonSlides;
+  @ViewChild(IonSlides) slider!: IonSlides;
 
   ngOnInit(): void {
-    this.questionGroups = this.questionSourceService.QuestionGroups;
-
     this.resultService.ResultSavedObservable.pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(() => this.setCurrentControlButtons());
@@ -73,18 +72,20 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   }
 
   async setCurrentControlButtons(): Promise<void> {
-    if (await this.slider.isBeginning()) {
-      this.animationStateBackButton = "hidden";
-      this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
-      this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
-    } else if (await this.slider.isEnd()) {
-      this.animationStateBackButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
-      this.animationStateNextButton = "hidden";
-      this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
-    } else {
-      this.animationStateBackButton = "visible-25";
-      this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-75";
-      this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-50" : "hidden";
+    if (!!this.slider) {
+      if (await this.slider.isBeginning()) {
+        this.animationStateBackButton = "hidden";
+        this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
+        this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
+      } else if (await this.slider.isEnd()) {
+        this.animationStateBackButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
+        this.animationStateNextButton = "hidden";
+        this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
+      } else {
+        this.animationStateBackButton = "visible-25";
+        this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-75";
+        this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-50" : "hidden";
+      }
     }
   }
 
@@ -94,9 +95,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     } else {
       const toast = await this.toastController.create({
         message: "Es wurden nicht alle Fragen beantwortet...",
-        color: "danger",
+        color: 'danger',
         duration: 2000,
-        translucent: true
+        translucent: false
       });
       toast.present();
     }

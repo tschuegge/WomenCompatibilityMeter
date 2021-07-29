@@ -15,7 +15,7 @@ import { ResultService } from 'src/app/shared/result.service';
 })
 export class DetailsPage implements OnInit {
 
-  resultGroup: ResultGroup;
+  resultGroup: ResultGroup | undefined;
   ANSWER_RATING_ENUM = AnswerRatingEnum;
   QUESTION_TYPE_ENUM = QuestionTypeEnum;
 
