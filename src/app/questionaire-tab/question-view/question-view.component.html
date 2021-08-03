@@ -15,10 +15,19 @@
     <ion-list mode="md">
       <ion-radio-group [(ngModel)]="value" (ionChange)="onValueChange()">
         <ion-item *ngFor="let answer of question.Answers">
-          <ion-label>{{answer.Answer}}</ion-label>
+          <ion-label class="ion-text-wrap">{{answer.Answer}}</ion-label>
           <ion-radio slot="start" value="{{answer.Answer}}"></ion-radio>
         </ion-item>
       </ion-radio-group>
+    </ion-list>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.Checkbox">
+    <ion-list mode="md">
+      <ion-item *ngFor="let option of question.CheckboxOptions; index as index">
+        <ion-label>{{option}}</ion-label>
+        <ion-checkbox slot="start" [(ngModel)]="checkedCheckboxes[index]" (ionChange)="onValueChange()"></ion-checkbox>
+      </ion-item>
     </ion-list>
   </ng-container>
 

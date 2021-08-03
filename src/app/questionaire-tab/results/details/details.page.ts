@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Subject } from 'rxjs';
@@ -24,7 +25,8 @@ export class DetailsPage implements OnInit {
   constructor(
     private resultService: ResultService,
     private navController: NavController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private domSanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +39,14 @@ export class DetailsPage implements OnInit {
         this.navController.navigateRoot("/");
       }
     });
+  }
+
+  renderArrayAsHtml(array: number | string | Array<string>) {
+    if (Array.isArray(array)) {
+      return this.domSanitizer.bypassSecurityTrustHtml(array.join("<br>"));
+    } else {
+      return array;
+    }
   }
 
 }

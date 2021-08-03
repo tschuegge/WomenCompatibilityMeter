@@ -53,6 +53,7 @@
             <ng-container [ngSwitch]="result.Question.QuestionType">
               <p *ngSwitchCase="QUESTION_TYPE_ENUM.PercentSlider">{{result.ResultetValue}}%</p>
               <p *ngSwitchCase="QUESTION_TYPE_ENUM.RadioGroup">{{result.ResultetValue}}</p>
+              <p *ngSwitchCase="QUESTION_TYPE_ENUM.Checkbox" [innerHtml]="renderArrayAsHtml(result.ResultetValue)"></p>
             </ng-container>
             <ng-container *ngIf="result.ResultedAnswer.Hint">
               <hr>

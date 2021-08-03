@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Answer } from './model/answer';
 import { AnswerRatingEnum } from './model/answer-rating-enum';
 import { AnswerTypeEnum } from './model/answer-type-enum';
 import { Question } from './model/question';
+import { QuestionTypeEnum } from './model/question-type-enum';
 import { Result } from './model/result';
 import { ResultGroup } from './model/result-group';
 import { TotalRating } from './model/total-rating';
@@ -23,6 +25,10 @@ export class ResultService {
     this.questionSourceService.QuestionGroups.forEach(group => {
       this.totalRating.totalPoints += group.Questions.length * AnswerRatingEnum.Good;
     });
+
+    if (environment.autoFillQuestions) {
+      this.autoFillQuestions();
+    }
   }
 
   /**
@@ -48,7 +54,7 @@ export class ResultService {
    * @param question Question that was answered
    * @param result Result from user
    */
-  saveResult(question: Question, result: number | string): void {
+  saveResult(question: Question, result: number | string | Array<string>): void {
     const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
 
     // Insert Result Group if needed
@@ -70,7 +76,11 @@ export class ResultService {
         resultedanswer = question.Answers.find((answer, index) => result <= answer.Answer && (index === question.Answers.length - 1 || result > question.Answers[index + 1].Answer));
         break;
       case AnswerTypeEnum.EqualOrMore:
-        resultedanswer = question.Answers.find((answer, index) => result >= answer.Answer && (index === question.Answers.length - 1 || result < question.Answers[index + 1].Answer));
+        if (question.QuestionType === QuestionTypeEnum.Checkbox && Array.isArray(result)) {
+          resultedanswer = question.Answers.find((answer, index) => result.length >= answer.Answer && (index === question.Answers.length - 1 || result.length < question.Answers[index + 1].Answer));
+        } else {
+          resultedanswer = question.Answers.find((answer, index) => result >= answer.Answer && (index === question.Answers.length - 1 || result < question.Answers[index + 1].Answer));
+        }
         break;
       case AnswerTypeEnum.Equal:
         resultedanswer = question.Answers.find(a => a.Answer == result);
@@ -137,11 +147,15 @@ export class ResultService {
    * Fills all questions with results, only for demonstration and development purposes
    */
   autoFillQuestions() {
-    this.saveResult(this.questionSourceService.QuestionGroups[0].Questions[0], 60);
-    this.saveResult(this.questionSourceService.QuestionGroups[0].Questions[1], 80);
-    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[0], "Nein");
-    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[1], "Ja");
-    this.saveResult(this.questionSourceService.QuestionGroups[1].Questions[2], "Ja");
+    this.questionSourceService.QuestionGroups.forEach(group => group.Questions.forEach(question => {
+      if (question.QuestionType !== QuestionTypeEnum.Checkbox) {
+        const randomAnswer = question.Answers[Math.floor(Math.random() * question.Answers.length)]; // Pick random answer
+        this.saveResult(question, randomAnswer.Answer);
+      } else {
+        const randomAnswers = question.CheckboxOptions.filter(() => Math.random() < 0.5);
+        this.saveResult(question, randomAnswers);
+      }
+    }));
   }
 
   private determineRating(points: number): AnswerRatingEnum {

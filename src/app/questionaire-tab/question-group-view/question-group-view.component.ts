@@ -8,6 +8,6 @@ import { QuestionGroup } from 'src/app/shared/model/question-group';
 })
 export class QuestionGroupViewComponent {
 
-  @Input() questionGroup!: QuestionGroup;
+  @Input() questionGroup: QuestionGroup;
 
 }

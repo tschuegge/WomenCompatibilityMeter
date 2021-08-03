@@ -5,6 +5,7 @@ import { AnswerTypeEnum } from "./answer-type-enum";
 export interface Question {
   Text: string;
   QuestionType: QuestionTypeEnum;
+  CheckboxOptions?: Array<string>;
   Answers: Array<Answer>;
   AnswerType: AnswerTypeEnum;
 }

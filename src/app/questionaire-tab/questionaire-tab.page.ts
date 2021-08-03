@@ -49,7 +49,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     this.questionGroups = this.questionSourceService.QuestionGroups;
   }
 
-  @ViewChild(IonSlides) slider!: IonSlides;
+  @ViewChild(IonSlides) slider: IonSlides;
 
   ngOnInit(): void {
     this.resultService.ResultSavedObservable.pipe(
