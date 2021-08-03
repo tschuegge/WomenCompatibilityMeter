@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  autoFillQuestions: true
+  autoFillQuestions: true,
+  version: require("../../package.json").version + " - Development Build"
 };
 
 /*

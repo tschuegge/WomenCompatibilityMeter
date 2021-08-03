@@ -45,6 +45,9 @@ export class ResultService {
     return this.resultGroup;
   }
 
+  /**
+   * Returns Total Rating
+   */
   get TotalRating() {
     return this.totalRating;
   }
