@@ -24,3 +24,28 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+/* Frame for Desktop View */
+@media (min-width: 768px) {
+  ion-app {
+    width: 650px;
+    max-height: 90%;
+    margin: auto;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 0 100px -20px gray;
+  }
+  body {
+    background-color: lightgray;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ion-app {
+      box-shadow: 0 0 100px -20px black;
+    }
+    body {
+      background-color: #333;
+    }
+  }
+}
