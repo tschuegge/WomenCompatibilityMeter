@@ -6,7 +6,7 @@ import { AnswerRatingEnum } from 'src/app/shared/model/answer-rating-enum';
 export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
   {
     GroupName: 'Teilzeit',
-    Description: 'Das Anbieten von Teilzeitpensen ist ein wichtiger Faktor um ein Unternehmen für Frauen attraktiv zu gestalten.',
+    Description: 'Das Anbieten von Teilzeitpensen ist ein wichtiger Faktor, um ein Unternehmen für Frauen attraktiv zu gestalten.',
     Questions: [
       {
         Text: 'Zu welchem Arbeitspensum in Prozent müssen Mitarbeitende mindestens angestellt sein?',
