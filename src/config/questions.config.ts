@@ -22,8 +22,8 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?',
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: 'Für Mütter ist es oft nicht möglich, in den ersten Jahren der Mutterschaft, wieder Vollzeit zu arbeiten. Durch Jobsharing oder andere Anstellungformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.' },
-          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: 'Durch Jobsharing oder andere Anstellungformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.' },
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: 'Für Mütter ist es oft nicht möglich, in den ersten Jahren der Mutterschaft, wieder Vollzeit zu arbeiten. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.' },
+          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: 'Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.' },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.EqualOrLess
@@ -36,16 +36,16 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
     // Source: https://www.fho.ch/fileadmin/pdf/service/fho_gender_leitfaden_stelleninserate.pdf
     Questions: [
       {
-        Text: 'Verwendet die Firma in Stellenausschreibungen Phrasen wie: "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklerungleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams"?',
+        Text: 'Verwendet die Firma in Stellenausschreibungen Phrasen wie: "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams"?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Verkaufsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
       {
-        Text: 'Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, nahe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt.',
+        Text: 'Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, nahe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
@@ -97,9 +97,9 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Eine Softwareentwicklerin bittet den Systemadministrator um Hilfe bei einem Netzwerkproblem. Als es nach zweimaligem Erklären immer noch nicht funktioniert, meint der Systemadministrator, dass es möglicherweise an ihren "langen Haaren" liegen würde. Wie wird diese Situation in der Firma beurteilt?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Das war nur ein dummer Spruch, keine weitere Reaktion notwendigt.', Rating: AnswerRatingEnum.Bad, Hint: 'Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Anangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab.' },
+          { Answer: 'Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.', Rating: AnswerRatingEnum.Bad, Hint: 'Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab.' },
           { Answer: 'Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.', Rating: AnswerRatingEnum.Medium, Hint: 'Dass fehlender Respekt von Vorgesetzen nicht akzeptiert werden, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.' },
-          { Answer: 'Das Team tolieriert solches Verhalten nicht.', Rating: AnswerRatingEnum.Good, Hint: '' }
+          { Answer: 'Das Team toleriert solches Verhalten nicht.', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
@@ -119,7 +119,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Answers: [
           { Answer: 'Sie würde als emanzipierte Feministin wahrgenommen.', Rating: AnswerRatingEnum.Bad, Hint: 'Eigenschaften wie die sachliche und direkte Kommunikation oder Selbstbewusstsein und Durchsetzungsstärke dürfen bei Frauen nicht anders bewertet werden, wie bei Männern.' },
           { Answer: 'Sie würde nicht speziell wahrgenommen werden.', Rating: AnswerRatingEnum.Good, Hint: '' },
-          { Answer: 'Sie würde besonders für ihre Professionalität gelobt werden. ', Rating: AnswerRatingEnum.Medium, Hint: 'Frauen mögen es häufig nicht, wenn sie nur wegem dem Frau-sein auf ein Podest gehoben werden.' }
+          { Answer: 'Sie würde besonders für ihre Professionalität gelobt werden.', Rating: AnswerRatingEnum.Medium, Hint: 'Frauen mögen es häufig nicht, wenn sie nur wegen dem Frau-sein auf ein Podest gehoben werden.' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
@@ -127,7 +127,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Die Firma stellt die erste Frau in der Softwareentwicklung ein. Wie geht die Firma mit dieser Mitarbeiterin um?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Die Firma ist stolz auf die Frau und nützt die Situation um eine Image-Kampagne zu starten, bei der auf die Diversität und besondere Frauenfreundlichkeit im Team eingegangen wird.', Rating: AnswerRatingEnum.Bad, Hint: 'Frauen mögen es häufig nicht, wenn sie auf ein Podest gehoben werden, nur weil sie Frauen sind.' },
+          { Answer: 'Die Firma ist stolz auf die Frau und nützt die Situation, um eine Image-Kampagne zu starten, bei der auf die Diversität und besondere Frauenfreundlichkeit im Team eingegangen wird.', Rating: AnswerRatingEnum.Bad, Hint: 'Frauen mögen es häufig nicht, wenn sie auf ein Podest gehoben werden, nur weil sie Frauen sind.' },
           { Answer: 'Die Mitarbeiterin wird wie die anderen Mitarbeitenden ins Team integriert und nicht besonders behandelt.', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird, nur weil sie Frauen sind. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.' }
         ],
@@ -144,8 +144,8 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'in kleinen interdisziplinären Teams mit viel Austausch unter den Mitgliedern', Rating: AnswerRatingEnum.Good, Hint: '' },
-          { Answer: 'die Entwicklerinnen und Entwickler arbeiten meistens alleine und ungestört mit wenig Austausch zu anderen Mitarbeitenden', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig ist das Team und der Austausch untereinander eine wichtige Komponente. Das Bild vom einsamen Entwickler schreckt viele ab, diesen Beruf auszuüben.' },
-          { Answer: 'die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden. Pizza und Coke sind ein ständiger Begleiter.', Rating: AnswerRatingEnum.Bad, Hint: 'Solche Klischees wie "einsamer Nerd, umgeben von Pizza und Coke" schrecken viele Personen und verhindern, dass Menschen in die Softwareentwicklung einsteigen.' }
+          { Answer: 'die Entwicklerinnen und Entwickler arbeiten meistens allein und ungestört mit wenig Austausch zu anderen Mitarbeitenden', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind das Team und der Austausch untereinander eine wichtige Komponente. Das Bild vom einsamen Entwickler schreckt viele ab, diesen Beruf auszuüben.' },
+          { Answer: 'die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden. Pizza und Coke sind ein ständiger Begleiter', Rating: AnswerRatingEnum.Bad, Hint: 'Solche Klischees wie "einsamer Nerd, umgeben von Pizza und Coke" schrecken viele Personen und verhindern, dass Menschen in die Softwareentwicklung einsteigen.' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
@@ -153,7 +153,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Bedeutet Softwareentwicklung in erster Linie nur Quellcode schreiben?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind die Tätigkeiten in der Softwareentwicklung vielfältiger als nur Quellcode schreiben. Diese Vielfältigkeit ist häufig nicht bekannt und daher wird der Beruf nicht so wahrgenommen wie er wirklich ist.' },
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind die Tätigkeiten in der Softwareentwicklung vielfältiger als nur Quellcode schreiben. Diese Vielfältigkeit ist häufig nicht bekannt und daher wird der Beruf nicht so wahrgenommen, wie er wirklich ist.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.Equal
@@ -168,7 +168,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         AnswerType: AnswerTypeEnum.Equal
       },
       {
-        Text: 'Müssen Softwareentwicklerinnen und Softwareentwickler über Ästhetik verfügan',
+        Text: 'Müssen Softwareentwicklerinnen und Softwareentwickler über Ästhetik verfügen?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
@@ -179,11 +179,11 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
     ]
   },
   {
-    GroupName: 'Famlienfreundlichkeit',
-    Description: 'Die Vereinbarkeit von Beruf und Familie ist für viele Frauen ein wichtige Komponente, warum sie sich für ein Unternehmen entscheiden.',
+    GroupName: 'Familienfreundlichkeit',
+    Description: 'Die Vereinbarkeit von Beruf und Familie ist für viele Frauen eine wichtige Komponente, warum sie sich für ein Unternehmen entscheiden.',
     Questions: [
       {
-        Text: 'Was für ein Arbeitszeitmodell bietet das Unternehmen den Mitarbeitenden in der Softwareentwicklung an (bei mehreren Modellen bitte das flexibelste wählen)?',
+        Text: 'Was für ein Arbeitszeitmodell bietet das Unternehmen den Mitarbeitenden in der Softwareentwicklung an (bei mehreren Modellen bitte das flexibelste Modell wählen)?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'flexible Arbeitszeit mit einer Blockzeit', Rating: AnswerRatingEnum.Medium, Hint: 'Flexibilität ist besonders für Mütter in der Regel ein besonders wichtiges Kriterium. Der Verzicht auf eine Blockzeit würde die Flexibilität weiter erhöhen.' },
@@ -198,13 +198,13 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Answers: [
           { Answer: 'nur im Büro', Rating: AnswerRatingEnum.Bad, Hint: 'Für Mütter und Väter ist ein flexibler Arbeitsort ein grosser Vorteil. Das Ermöglichen von Homeoffice würde die Attraktivität des Unternehmens für Bewerbenden weiter steigern.' },
           { Answer: 'primär im Büro und an wenigen definierten Tagen im Homeoffice', Rating: AnswerRatingEnum.Medium, Hint: 'Für Mütter und Väter ist ein flexibler Arbeitsort ein grosser Vorteil. Die Möglichkeit viel aus dem Homeoffice zu arbeiten, würde die Attraktivität des Unternehmens für Bewerbenden weiter steigern.' },
-          { Answer: 'beliebig viel im Büro und Homeoffice (die Mitarbeitenden sind selber verantwortlich)', Rating: AnswerRatingEnum.Good, Hint: '' },
+          { Answer: 'beliebig viel im Büro und Homeoffice (die Mitarbeitenden sind selbst verantwortlich)', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'irgendwo, sofern die Arbeitsqualität nicht leidet', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.Equal
       },
       {
-        Text: 'Was bietet das Unternehmen den Mitarbeitenden in der Softwarentwicklung zusätzlich an um die Vereinbarkeit von Beruf und Familie zu vereinfachen?',
+        Text: 'Was bietet das Unternehmen den Mitarbeitenden in der Softwareentwicklung  zusätzlich an, um die Vereinbarkeit von Beruf und Familie zu vereinfachen?',
         QuestionType: QuestionTypeEnum.Checkbox,
         CheckboxOptions: [
           'flexibles Anpassen des Arbeitspensums',
@@ -214,8 +214,8 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           'anderes'
         ],
         Answers: [
-          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: 'Zusätzliche Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigern die Attraktivität des Unternehmes bei den Bewerbenden.' },
-          { Answer: 1, Rating: AnswerRatingEnum.Medium, Hint: 'Das Einführung von weiteren Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigert die Attraktivität bei Bewerbenden zusätzlich.' },
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: 'Zusätzliche Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigern die Attraktivität des Unternehmens bei den Bewerbenden.' },
+          { Answer: 1, Rating: AnswerRatingEnum.Medium, Hint: 'Die Einführung von weiteren Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigert die Attraktivität bei Bewerbenden zusätzlich.' },
           { Answer: 2, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         AnswerType: AnswerTypeEnum.EqualOrMore
