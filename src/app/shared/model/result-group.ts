@@ -7,5 +7,5 @@ export interface ResultGroup {
   Results: Array<Result>;
   GroupRating: AnswerRatingEnum;
   TotalPoints: number;
-  GroupPoints: number;
+  CurrentGroupPoints: number;
 }

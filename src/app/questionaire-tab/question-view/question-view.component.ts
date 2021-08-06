@@ -20,7 +20,7 @@ export class QuestionViewComponent implements OnInit {
   constructor(private resultService: ResultService) { }
 
   ngOnInit(): void {
-    this.value = this.resultService.getResultForQuestion(this.question)?.ResultetValue;
+    this.value = this.resultService.getResultForQuestion(this.question)?.ResultedValue;
 
     if (this.question.QuestionType === QuestionTypeEnum.Checkbox && Array.isArray(this.value)) {
       for (let i = 0; i < this.question.CheckboxOptions.length; i++) {

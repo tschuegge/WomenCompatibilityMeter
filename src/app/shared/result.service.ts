@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Answer } from './model/answer';
 import { AnswerRatingEnum } from './model/answer-rating-enum';
-import { AnswerTypeEnum } from './model/answer-type-enum';
+import { EvaluationTypeEnum } from './model/evaluation-type-enum';
 import { Question } from './model/question';
 import { QuestionTypeEnum } from './model/question-type-enum';
 import { Result } from './model/result';
@@ -66,7 +66,7 @@ export class ResultService {
         QuestionGroup: this.questionSourceService.QuestionGroups[groupNo],
         Results: new Array<Result>(),
         GroupRating: AnswerRatingEnum.Bad,
-        GroupPoints: 0,
+        CurrentGroupPoints: 0,
         TotalPoints: this.questionSourceService.QuestionGroups[groupNo].Questions.length * AnswerRatingEnum.Good
       };
     }
@@ -74,18 +74,18 @@ export class ResultService {
     // Determine Answer
     const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
     let resultedanswer: Answer | undefined;
-    switch (question.AnswerType) {
-      case AnswerTypeEnum.EqualOrLess:
+    switch (question.EvaluationType) {
+      case EvaluationTypeEnum.EqualOrLess:
         resultedanswer = question.Answers.find((answer, index) => result <= answer.Answer && (index === question.Answers.length - 1 || result > question.Answers[index + 1].Answer));
         break;
-      case AnswerTypeEnum.EqualOrMore:
+      case EvaluationTypeEnum.EqualOrMore:
         if (question.QuestionType === QuestionTypeEnum.Checkbox && Array.isArray(result)) {
           resultedanswer = question.Answers.find((answer, index) => result.length >= answer.Answer && (index === question.Answers.length - 1 || result.length < question.Answers[index + 1].Answer));
         } else {
           resultedanswer = question.Answers.find((answer, index) => result >= answer.Answer && (index === question.Answers.length - 1 || result < question.Answers[index + 1].Answer));
         }
         break;
-      case AnswerTypeEnum.Equal:
+      case EvaluationTypeEnum.Equal:
         resultedanswer = question.Answers.find(a => a.Answer == result);
         break;
     }
@@ -95,9 +95,9 @@ export class ResultService {
     }
 
     // Set result and total group rating
-    this.resultGroup[groupNo].Results[questionNo] = { Question: question, ResultetValue: result, ResultedAnswer: resultedanswer };
-    this.resultGroup[groupNo].GroupPoints = this.determinePointsInGroup(groupNo);
-    this.resultGroup[groupNo].GroupRating = this.determineRating(this.resultGroup[groupNo].GroupPoints);
+    this.resultGroup[groupNo].Results[questionNo] = { Question: question, ResultedValue: result, ResultedAnswer: resultedanswer };
+    this.resultGroup[groupNo].CurrentGroupPoints = this.determinePointsInGroup(groupNo);
+    this.resultGroup[groupNo].GroupRating = this.determineRating(this.resultGroup[groupNo].CurrentGroupPoints);
 
     // Set total points and total rating
     this.totalRating.currentPoints = 0;

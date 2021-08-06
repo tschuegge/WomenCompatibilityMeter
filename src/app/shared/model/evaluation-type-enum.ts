@@ -1,4 +1,4 @@
-export enum AnswerTypeEnum {
+export enum EvaluationTypeEnum {
   EqualOrLess,
   EqualOrMore,
   Equal

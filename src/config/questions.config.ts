@@ -1,6 +1,6 @@
 import { QuestionGroup } from 'src/app/shared/model/question-group';
 import { QuestionTypeEnum } from 'src/app/shared/model/question-type-enum';
-import { AnswerTypeEnum } from 'src/app/shared/model/answer-type-enum';
+import { EvaluationTypeEnum } from 'src/app/shared/model/evaluation-type-enum';
 import { AnswerRatingEnum } from 'src/app/shared/model/answer-rating-enum';
 
 export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
@@ -16,7 +16,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: 'Tiefere Teilzeitpensen helfen Frauen (insbesondere Müttern) einer Erwerbstätigkeit nachzugehen.' },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.EqualOrLess
+        EvaluationType: EvaluationTypeEnum.EqualOrLess
       },
       {
         Text: 'Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?',
@@ -26,7 +26,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: 'Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.' },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.EqualOrLess
+        EvaluationType: EvaluationTypeEnum.EqualOrLess
       }
     ]
   },
@@ -42,7 +42,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, nahe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt?',
@@ -51,7 +51,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'In Zeiten des Fachkräftemangels bewirbt sich eine Fachkraft nicht nur beim Unternehmen, sondern auch das Unternehmen bei der Fachkraft.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Werden die Aufgaben und Anforderungen in Stellenausschreibungen beschreibend formuliert, statt Pflichten und Kompetenzen aufzuzählen?',
@@ -60,7 +60,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'Beschreibende Inserate verhindern, dass Bewerbende Punkt für Punkt als erfüllt oder nicht erfüllt klassifiziert werden. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       }
     ]
   },
@@ -76,7 +76,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: 'Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es schon Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.' },
           { Answer: 30, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.EqualOrMore
+        EvaluationType: EvaluationTypeEnum.EqualOrMore
       },
       {
         Text: 'Gibt es Teams in denen nur eine Frau vertreten ist?',
@@ -85,7 +85,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Frauen arbeiten tendenziell lieber in gemischten Teams.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       }
     ]
   },
@@ -101,7 +101,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.', Rating: AnswerRatingEnum.Medium, Hint: 'Dass fehlender Respekt von Vorgesetzen nicht akzeptiert werden, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.' },
           { Answer: 'Das Team toleriert solches Verhalten nicht.', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Ein Softwareentwicklerin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie würde in der Firma damit umgegangen?',
@@ -111,7 +111,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.', Rating: AnswerRatingEnum.Medium, Hint: 'Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen werden tendenziell weniger mit der Forderung für Lohnangleichung beim Vorgesetzte ankommen.' },
           { Answer: 'Der Lohnunterschied lässt sich auf Grund erklären, da Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.', Rating: AnswerRatingEnum.Bad, Hint: 'Um attraktiv für Frauen zu sein ist der Grundsatz "gleicher Lohn für gleiche Arbeit" unerlässlich. Eine generell tiefere Eignung von Frauen für die Aufgaben in der Softwareentwicklung lässt sich nicht begründen.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Eine neu einstellte Softwareentwicklerin kommuniziert sehr sachlich und direkt. Sie ist sehr selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?',
@@ -121,7 +121,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Sie würde nicht speziell wahrgenommen werden.', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Sie würde besonders für ihre Professionalität gelobt werden.', Rating: AnswerRatingEnum.Medium, Hint: 'Frauen mögen es häufig nicht, wenn sie nur wegen dem Frau-sein auf ein Podest gehoben werden.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Die Firma stellt die erste Frau in der Softwareentwicklung ein. Wie geht die Firma mit dieser Mitarbeiterin um?',
@@ -131,7 +131,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Die Mitarbeiterin wird wie die anderen Mitarbeitenden ins Team integriert und nicht besonders behandelt.', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird, nur weil sie Frauen sind. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       }
     ]
   },
@@ -147,7 +147,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'die Entwicklerinnen und Entwickler arbeiten meistens allein und ungestört mit wenig Austausch zu anderen Mitarbeitenden', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind das Team und der Austausch untereinander eine wichtige Komponente. Das Bild vom einsamen Entwickler schreckt viele ab, diesen Beruf auszuüben.' },
           { Answer: 'die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden. Pizza und Coke sind ein ständiger Begleiter', Rating: AnswerRatingEnum.Bad, Hint: 'Solche Klischees wie "einsamer Nerd, umgeben von Pizza und Coke" schrecken viele Personen und verhindern, dass Menschen in die Softwareentwicklung einsteigen.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Bedeutet Softwareentwicklung in erster Linie nur Quellcode schreiben?',
@@ -156,7 +156,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind die Tätigkeiten in der Softwareentwicklung vielfältiger als nur Quellcode schreiben. Diese Vielfältigkeit ist häufig nicht bekannt und daher wird der Beruf nicht so wahrgenommen, wie er wirklich ist.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Müssen Softwareentwicklerinnen und Softwareentwickler über besonders gute mathematische Fähigkeiten verfügen?',
@@ -165,7 +165,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'In vielen Fällen wird in der Softwareentwicklung keine besonders anspruchsvolle Mathematik benötigt. Trotzdem schreckt diese scheinbare Anforderung viele Personen ab, diesen Beruf zu lernen oder auszuüben.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Müssen Softwareentwicklerinnen und Softwareentwickler über Ästhetik verfügen?',
@@ -174,7 +174,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'Oft geht es in der Softwareentwicklung im übertragenen Sinn um Schönheit, sei es bei Bedienoberflächen, Datenmodellen oder Softwarearchitekturen.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       }
     ]
   },
@@ -190,7 +190,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'flexible Arbeitszeit ohne Blockzeit', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'fixe Arbeitszeiten', Rating: AnswerRatingEnum.Bad, Hint: 'Flexibilität ist besonders für Mütter in der Regel ein besonders wichtiges Kriterium. Das Einführen von flexiblen Arbeitszeiten würde die Flexibilität für alle Mitarbeitenden erhöhen.' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Von wo aus dürfen die Mitarbeitenden in der Softwareentwicklung arbeiten?',
@@ -201,7 +201,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 'beliebig viel im Büro und Homeoffice (die Mitarbeitenden sind selbst verantwortlich)', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'irgendwo, sofern die Arbeitsqualität nicht leidet', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.Equal
+        EvaluationType: EvaluationTypeEnum.Equal
       },
       {
         Text: 'Was bietet das Unternehmen den Mitarbeitenden in der Softwareentwicklung  zusätzlich an, um die Vereinbarkeit von Beruf und Familie zu vereinfachen?',
@@ -218,7 +218,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
           { Answer: 1, Rating: AnswerRatingEnum.Medium, Hint: 'Die Einführung von weiteren Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigert die Attraktivität bei Bewerbenden zusätzlich.' },
           { Answer: 2, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
-        AnswerType: AnswerTypeEnum.EqualOrMore
+        EvaluationType: EvaluationTypeEnum.EqualOrMore
       }
     ]
   }

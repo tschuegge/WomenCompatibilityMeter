@@ -4,5 +4,5 @@ import { Question } from "./question";
 export interface Result {
   Question: Question;
   ResultedAnswer: Answer;
-  ResultetValue: number | string | Array<string>;
+  ResultedValue: number | string | Array<string>;
 }
