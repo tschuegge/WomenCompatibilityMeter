@@ -22,7 +22,7 @@ export class QuestionSourceService {
    * @param question Question of Question Group to find
    * @returns Index of Question Group with given question
    */
-  getQuestionGroupIndexByQuestion(question: Question): number {
+  getQuestionGroupNoByQuestion(question: Question): number {
     const groupIndex = this.questionGroupSource.findIndex(questionGroup => {
       return questionGroup.Questions.find(questionInGroup => questionInGroup === question) !== undefined
     });
@@ -38,7 +38,7 @@ export class QuestionSourceService {
    * @returns Index of question in question group
    */
   getQuestionIndexInQuestionGroup(question: Question): number {
-    const groupIndex = this.getQuestionGroupIndexByQuestion(question);
+    const groupIndex = this.getQuestionGroupNoByQuestion(question);
     return this.questionGroupSource[groupIndex].Questions.findIndex(questionInGroup => questionInGroup === question);
     // no check of 1- (not found) needed, cause getQuestionGroupIndexByQuestion fails if question is unknown
   }

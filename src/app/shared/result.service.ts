@@ -58,7 +58,7 @@ export class ResultService {
    * @param result Result from user
    */
   saveResult(question: Question, result: number | string | Array<string>): void {
-    const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
+    const groupNo = this.questionSourceService.getQuestionGroupNoByQuestion(question);
 
     // Insert Result Group if needed
     if (!this.resultGroup[groupNo]) {
@@ -96,15 +96,18 @@ export class ResultService {
 
     // Set result and total group rating
     this.resultGroup[groupNo].Results[questionNo] = { Question: question, ResultedValue: result, ResultedAnswer: resultedanswer };
-    this.resultGroup[groupNo].CurrentGroupPoints = this.determinePointsInGroup(groupNo);
+    this.resultGroup[groupNo].CurrentGroupPoints = this.sumPointsInGroup(groupNo);
     this.resultGroup[groupNo].GroupRating = this.determineRating(this.resultGroup[groupNo].CurrentGroupPoints);
 
     // Set total points and total rating
     this.totalRating.currentPoints = 0;
-    for (let groupNo of this.resultGroup.keys()) {
-      this.totalRating.currentPoints += this.determinePointsInGroup(groupNo);
-    }
-    this.totalRating.currentRating = this.determineRating(this.totalRating.currentPoints);
+    this.totalRating.currentRating = AnswerRatingEnum.Good;
+    this.resultGroup.forEach(resultGroup => {
+      this.totalRating.currentPoints += resultGroup.CurrentGroupPoints;
+      if (resultGroup.GroupRating < this.totalRating.currentRating) {
+        this.totalRating.currentRating = resultGroup.GroupRating;
+      }
+    });
 
     this.resultSaved$.next();
   }
@@ -141,7 +144,7 @@ export class ResultService {
    * @returns Result or undefined if no answered yet
    */
   getResultForQuestion(question: Question): Result {
-    const groupNo = this.questionSourceService.getQuestionGroupIndexByQuestion(question);
+    const groupNo = this.questionSourceService.getQuestionGroupNoByQuestion(question);
     const questionNo = this.questionSourceService.getQuestionIndexInQuestionGroup(question);
     return this.resultGroup[groupNo]?.Results[questionNo];
   }
@@ -161,11 +164,29 @@ export class ResultService {
     }));
   }
 
+  /**
+   * Determine rating for given points
+   * @param points Points for determine rating
+   * @returns Rating
+   */
   private determineRating(points: number): AnswerRatingEnum {
-    return (points % AnswerRatingEnum.Good === 0) ? AnswerRatingEnum.Good : (points % AnswerRatingEnum.Medium === 0) ? AnswerRatingEnum.Medium : AnswerRatingEnum.Bad;
+    let rating: AnswerRatingEnum;
+    if (points % AnswerRatingEnum.Good === 0) {
+      rating = AnswerRatingEnum.Good;
+    } else if (points % AnswerRatingEnum.Medium === 0) {
+      rating = AnswerRatingEnum.Medium;
+    } else {
+      rating = AnswerRatingEnum.Bad;
+    }
+    return rating;
   }
 
-  private determinePointsInGroup(groupNo: number): number {
+  /**
+   * Sum of all points in group
+   * @param groupNo Group for sum all points
+   * @returns Sum of all points
+   */
+  private sumPointsInGroup(groupNo: number): number {
     let totalPoints = 0;
     this.resultGroup[groupNo].Results.forEach(r => totalPoints += r.ResultedAnswer.Rating);
     return totalPoints;
