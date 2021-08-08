@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "doc",
+			"problemMatcher": [],
+			"label": "Build documentation",
+			"detail": "compodoc -p tsconfig.doc.json --hideGenerator --disableCoverage"
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "Build App",
+			"detail": "ng build"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "Start Dev Server on localhost:4200",
+			"detail": "ng serve"
+		}
+	]
+}

@@ -1,0 +1,739 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>women-compatibility-meter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ResultsPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/questionaire-tab/results/results.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-results</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./results.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./results.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ANSWER_RATING_ENUM" >ANSWER_RATING_ENUM</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resultGroupContainsHint" >resultGroupContainsHint</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#ResultGroup" >ResultGroup</a>
+                                </li>
+                                <li>
+                                    <a href="#QuestionGroup" >QuestionGroup</a>
+                                </li>
+                                <li>
+                                    <a href="#TotalRating" >TotalRating</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(resultService: <a href="../injectables/ResultService.html" target="_self">ResultService</a>, questionSourceService: <a href="../injectables/QuestionSourceService.html" target="_self">QuestionSourceService</a>, alertController: AlertController, navController: NavController)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>resultService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ResultService.html" target="_self" >ResultService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>questionSourceService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QuestionSourceService.html" target="_self" >QuestionSourceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertController</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>navController</td>
+                                                  
+                                                        <td>
+                                                                    <code>NavController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resultGroupContainsHint"></a>
+                    <span class="name">
+                        <span ><b>resultGroupContainsHint</b></span>
+                        <a href="#resultGroupContainsHint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resultGroupContainsHint(resultGroup: <a href="../interfaces/ResultGroup.html" target="_self">ResultGroup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>resultGroup</td>
+                                    <td>
+                                                <code><a href="../interfaces/ResultGroup.html" target="_self" >ResultGroup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ANSWER_RATING_ENUM"></a>
+                    <span class="name">
+                        <span ><b>ANSWER_RATING_ENUM</b></span>
+                        <a href="#ANSWER_RATING_ENUM"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>AnswerRatingEnum</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ResultGroup"></a>
+                        <span class="name"><b>ResultGroup</b><a href="#ResultGroup"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>ResultGroup()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:39</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="QuestionGroup"></a>
+                        <span class="name"><b>QuestionGroup</b><a href="#QuestionGroup"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>QuestionGroup()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:43</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TotalRating"></a>
+                        <span class="name"><b>TotalRating</b><a href="#TotalRating"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>TotalRating()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/questionaire-tab/results/results.page.ts:51</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { AlertController, NavController } from &#x27;@ionic/angular&#x27;;
+import { AnswerRatingEnum } from &#x27;src/app/shared/model/answer-rating-enum&#x27;;
+import { ResultGroup } from &#x27;src/app/shared/model/result-group&#x27;;
+import { QuestionSourceService } from &#x27;src/app/shared/question-source.service&#x27;;
+import { ResultService } from &#x27;src/app/shared/result.service&#x27;;
+
+@Component({
+  selector: &#x27;app-results&#x27;,
+  templateUrl: &#x27;./results.page.html&#x27;,
+  styleUrls: [&#x27;./results.page.scss&#x27;],
+})
+export class ResultsPage implements OnInit {
+
+  ANSWER_RATING_ENUM &#x3D; AnswerRatingEnum;
+
+  constructor(
+    private resultService: ResultService,
+    private questionSourceService: QuestionSourceService,
+    private alertController: AlertController,
+    private navController: NavController
+  ) { }
+
+  async ngOnInit(): Promise&lt;void&gt; {
+    if (!this.resultService.areAllGroupsCompleted()) {
+      const alert &#x3D; await this.alertController.create({
+        header: &quot;Das Ergebnis kann nicht angezeigt werden&quot;,
+        message: &quot;Es wurden nicht alle Fragen beantwortet. Sie werden zum Fragebogen weitergeleitet.&quot;,
+        buttons: [{
+          text: &quot;Ok&quot;,
+          handler: () &#x3D;&gt; this.navController.navigateBack(&quot;/&quot;)
+        }],
+        translucent: false
+      });
+      alert.present();
+    }
+  }
+
+  get ResultGroup() {
+    return this.resultService.ResultGroups;
+  }
+
+  get QuestionGroup() {
+    return this.questionSourceService.QuestionGroups;
+  }
+
+  resultGroupContainsHint(resultGroup: ResultGroup): boolean {
+    return resultGroup.Results.find(r &#x3D;&gt; r.ResultedAnswer.Hint.length &gt; 0) !&#x3D;&#x3D; undefined;
+  }
+
+  get TotalRating() {
+    return this.resultService.TotalRating;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar color&#x3D;&quot;primary&quot;&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-back-button defaultHref&#x3D;&quot;/questionaire-tab&quot; text&#x3D;&quot;Fragebogen&quot;&gt;&lt;/ion-back-button&gt;
+    &lt;/ion-buttons&gt;
+    &lt;ion-title&gt;Ergebnisse&lt;/ion-title&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
+
+  &lt;ion-card&gt;
+  
+    &lt;ion-card-header&gt;
+      &lt;ion-card-title&gt;Bewertung&lt;/ion-card-title&gt;
+    &lt;/ion-card-header&gt;
+  
+    &lt;ion-card-content&gt;
+      &lt;ion-grid&gt;
+        &lt;ion-row&gt;
+          &lt;ion-col&gt;
+            &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;success&quot; *ngIf&#x3D;&quot;TotalRating.currentRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Good&quot; name&#x3D;&quot;heart&quot;&gt;&lt;/ion-icon&gt;
+            &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;warning&quot; *ngIf&#x3D;&quot;TotalRating.currentRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Medium&quot; name&#x3D;&quot;heart-half&quot;&gt;&lt;/ion-icon&gt;
+            &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;danger&quot; *ngIf&#x3D;&quot;TotalRating.currentRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Bad&quot; name&#x3D;&quot;heart-dislike&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col size&#x3D;&quot;10&quot;&gt;
+            &lt;h1&gt;{{(TotalRating.currentPoints/TotalRating.totalPoints) | percent}}&lt;/h1&gt;
+            &lt;p&gt;Erläuterungen zu dieser Bewertung befinden sich bei den einzelnen Themenbereichen.&lt;/p&gt;
+          &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+      &lt;/ion-grid&gt;
+    &lt;/ion-card-content&gt;
+  
+  &lt;/ion-card&gt;
+
+  &lt;ng-container *ngFor&#x3D;&quot;let resultGroup of ResultGroup; index as groupNo&quot;&gt;
+    &lt;ion-card&gt;
+
+      &lt;ion-card-header&gt;
+        &lt;ion-card-title&gt;{{resultGroup.QuestionGroup.GroupName}}&lt;/ion-card-title&gt;
+        &lt;ion-card-subtitle&gt;{{resultGroup.QuestionGroup.Description}}&lt;/ion-card-subtitle&gt;
+      &lt;/ion-card-header&gt;
+
+      &lt;ion-card-content&gt;
+        &lt;ion-grid&gt;
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;success&quot; *ngIf&#x3D;&quot;resultGroup.GroupRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Good&quot; name&#x3D;&quot;heart&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;warning&quot; *ngIf&#x3D;&quot;resultGroup.GroupRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Medium&quot; name&#x3D;&quot;heart-half&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ion-icon class&#x3D;&quot;resultIcon&quot; color&#x3D;&quot;danger&quot; *ngIf&#x3D;&quot;resultGroup.GroupRating &#x3D;&#x3D; ANSWER_RATING_ENUM.Bad&quot; name&#x3D;&quot;heart-dislike&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col size&#x3D;&quot;10&quot;&gt;
+              &lt;ng-container *ngFor&#x3D;&quot;let result of resultGroup.Results&quot;&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;result.ResultedAnswer.Hint&quot;&gt;
+                  &lt;p&gt;{{result.ResultedAnswer.Hint}}&lt;/p&gt;
+                  &lt;hr&gt;
+                &lt;/ng-container&gt;
+              &lt;/ng-container&gt;
+              &lt;p *ngIf&#x3D;&quot;!resultGroupContainsHint(resultGroup)&quot;&gt;Herzlichen Glückwunsch, in diesem Bereich sind keine weiteren Tipps vorhanden.&lt;/p&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+        &lt;/ion-grid&gt;
+        &lt;div class&#x3D;&quot;ion-text-end&quot;&gt;
+          &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;small&quot; [routerLink]&#x3D;&quot;[&#x27;details&#x27;, groupNo]&quot;&gt;
+            Details
+            &lt;ion-icon name&#x3D;&quot;chevron-forward&quot; slot&#x3D;&quot;end&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-button&gt;
+        &lt;/div&gt;
+      &lt;/ion-card-content&gt;
+
+    &lt;/ion-card&gt;
+
+  &lt;/ng-container&gt;
+
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./results.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.resultIcon {
+  font-size: 3em;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar color="primary">    <ion-buttons slot="start">      <ion-back-button defaultHref="/questionaire-tab" text="Fragebogen"></ion-back-button>    </ion-buttons>    <ion-title>Ergebnisse</ion-title>  </ion-toolbar></ion-header><ion-content [fullscreen]="true">  <ion-card>      <ion-card-header>      <ion-card-title>Bewertung</ion-card-title>    </ion-card-header>      <ion-card-content>      <ion-grid>        <ion-row>          <ion-col>            <ion-icon class="resultIcon" color="success" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>            <ion-icon class="resultIcon" color="warning" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>            <ion-icon class="resultIcon" color="danger" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>          </ion-col>          <ion-col size="10">            <h1>{{(TotalRating.currentPoints/TotalRating.totalPoints) | percent}}</h1>            <p>Erläuterungen zu dieser Bewertung befinden sich bei den einzelnen Themenbereichen.</p>          </ion-col>        </ion-row>      </ion-grid>    </ion-card-content>    </ion-card>  <ng-container *ngFor="let resultGroup of ResultGroup; index as groupNo">    <ion-card>      <ion-card-header>        <ion-card-title>{{resultGroup.QuestionGroup.GroupName}}</ion-card-title>        <ion-card-subtitle>{{resultGroup.QuestionGroup.Description}}</ion-card-subtitle>      </ion-card-header>      <ion-card-content>        <ion-grid>          <ion-row>            <ion-col>              <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>              <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>              <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>            </ion-col>            <ion-col size="10">              <ng-container *ngFor="let result of resultGroup.Results">                <ng-container *ngIf="result.ResultedAnswer.Hint">                  <p>{{result.ResultedAnswer.Hint}}</p>                  <hr>                </ng-container>              </ng-container>              <p *ngIf="!resultGroupContainsHint(resultGroup)">Herzlichen Glückwunsch, in diesem Bereich sind keine weiteren Tipps vorhanden.</p>            </ion-col>          </ion-row>        </ion-grid>        <div class="ion-text-end">          <ion-button fill="clear" size="small" [routerLink]="[\'details\', groupNo]">            Details            <ion-icon name="chevron-forward" slot="end"></ion-icon>          </ion-button>        </div>      </ion-card-content>    </ion-card>  </ng-container></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailsPage', 'selector': 'app-details'},{'name': 'InfoTabPage', 'selector': 'app-info-tab'},{'name': 'QuestionaireTabPage', 'selector': 'app-questionaire-tab'},{'name': 'QuestionGroupViewComponent', 'selector': 'app-question-group-view'},{'name': 'QuestionViewComponent', 'selector': 'app-question-view'},{'name': 'ResultsPage', 'selector': 'app-results'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ResultsPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ResultsPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>women-compatibility-meter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >ResultService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/shared/result.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#resultGroup" >resultGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#resultSaved$" >resultSaved$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#totalRating" >totalRating</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#areAllGroupsCompleted" >areAllGroupsCompleted</a>
+                            </li>
+                            <li>
+                                <a href="#autoFillQuestions" >autoFillQuestions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#determineRating" >determineRating</a>
+                            </li>
+                            <li>
+                                <a href="#getResultForQuestion" >getResultForQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#isGroupCompleted" >isGroupCompleted</a>
+                            </li>
+                            <li>
+                                <a href="#saveResult" >saveResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sumPointsInGroup" >sumPointsInGroup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#ResultSavedObservable" >ResultSavedObservable</a>
+                                </li>
+                                <li>
+                                    <a href="#ResultGroups" >ResultGroups</a>
+                                </li>
+                                <li>
+                                    <a href="#TotalRating" >TotalRating</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(questionSourceService: <a href="../injectables/QuestionSourceService.html" target="_self">QuestionSourceService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/result.service.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>questionSourceService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QuestionSourceService.html" target="_self" >QuestionSourceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="areAllGroupsCompleted"></a>
+                    <span class="name">
+                        <span ><b>areAllGroupsCompleted</b></span>
+                        <a href="#areAllGroupsCompleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>areAllGroupsCompleted()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/app/shared/result.service.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if all questions of all groups are answered</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true if all questions of all groups are answered</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="autoFillQuestions"></a>
+                    <span class="name">
+                        <span ><b>autoFillQuestions</b></span>
+                        <a href="#autoFillQuestions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>autoFillQuestions()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/shared/result.service.ts:155</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Fills all questions with results, only for demonstration and development purposes</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="determineRating"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>determineRating</b></span>
+                        <a href="#determineRating"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>determineRating(points: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">src/app/shared/result.service.ts:172</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Determine rating for given points</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>points</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Points for determine rating</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Answer.html" target="_self" >AnswerRatingEnum</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Rating</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getResultForQuestion"></a>
+                    <span class="name">
+                        <span ><b>getResultForQuestion</b></span>
+                        <a href="#getResultForQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getResultForQuestion(question: <a href="../interfaces/Question.html" target="_self">Question</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/shared/result.service.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get result for given question</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>question</td>
+                                    <td>
+                                                <code><a href="../interfaces/Question.html" target="_self" >Question</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Question</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Result.html" target="_self" >Result</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Result or undefined if no answered yet</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isGroupCompleted"></a>
+                    <span class="name">
+                        <span ><b>isGroupCompleted</b></span>
+                        <a href="#isGroupCompleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isGroupCompleted(groupNo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/app/shared/result.service.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if all questions of a group are answered</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>groupNo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Number of Group</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>true if all questions of group are answered</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveResult"></a>
+                    <span class="name">
+                        <span ><b>saveResult</b></span>
+                        <a href="#saveResult"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveResult(question: <a href="../interfaces/Question.html" target="_self">Question</a>, result: number | string | Array<string>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/shared/result.service.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stores a new result from user for a question</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>question</td>
+                                    <td>
+                                                <code><a href="../interfaces/Question.html" target="_self" >Question</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Question that was answered</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>result</td>
+                                    <td>
+                                            <code>number | string | Array&lt;string&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Result from user</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sumPointsInGroup"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>sumPointsInGroup</b></span>
+                        <a href="#sumPointsInGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sumPointsInGroup(groupNo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">src/app/shared/result.service.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Sum of all points in group</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>groupNo</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Group for sum all points</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Sum of all points</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resultGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>resultGroup</b></span>
+                        <a href="#resultGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Array&lt;ResultGroup&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/result.service.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resultSaved$"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>resultSaved$</b></span>
+                        <a href="#resultSaved$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/result.service.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalRating"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>totalRating</b></span>
+                        <a href="#totalRating"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TotalRating.html" target="_self" >TotalRating</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ currentPoints: 0, totalPoints: 0, currentRating: AnswerRatingEnum.Bad }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/result.service.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ResultSavedObservable"></a>
+                        <span class="name"><b>ResultSavedObservable</b><a href="#ResultSavedObservable"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>ResultSavedObservable()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/result.service.ts:37</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns Observable that fires every time if a new result was stored</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ResultGroups"></a>
+                        <span class="name"><b>ResultGroups</b><a href="#ResultGroups"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>ResultGroups()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/result.service.ts:44</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns all result groups</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TotalRating"></a>
+                        <span class="name"><b>TotalRating</b><a href="#TotalRating"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>TotalRating()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/result.service.ts:51</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns Total Rating</p>
+</div>
+
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { Answer } from &#x27;./model/answer&#x27;;
+import { AnswerRatingEnum } from &#x27;./model/answer-rating-enum&#x27;;
+import { EvaluationTypeEnum } from &#x27;./model/evaluation-type-enum&#x27;;
+import { Question } from &#x27;./model/question&#x27;;
+import { QuestionTypeEnum } from &#x27;./model/question-type-enum&#x27;;
+import { Result } from &#x27;./model/result&#x27;;
+import { ResultGroup } from &#x27;./model/result-group&#x27;;
+import { TotalRating } from &#x27;./model/total-rating&#x27;;
+import { QuestionSourceService } from &#x27;./question-source.service&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class ResultService {
+
+  private resultGroup &#x3D; new Array&lt;ResultGroup&gt;();
+  private resultSaved$ &#x3D; new Subject&lt;void&gt;();
+
+  private totalRating: TotalRating &#x3D; { currentPoints: 0, totalPoints: 0, currentRating: AnswerRatingEnum.Bad };
+
+  constructor(private questionSourceService: QuestionSourceService) {
+    this.questionSourceService.QuestionGroups.forEach(group &#x3D;&gt; {
+      this.totalRating.totalPoints +&#x3D; group.Questions.length * AnswerRatingEnum.Good;
+    });
+
+    if (environment.autoFillQuestions) {
+      this.autoFillQuestions();
+    }
+  }
+
+  /**
+   * Returns Observable that fires every time if a new result was stored
+   */
+  get ResultSavedObservable() {
+    return this.resultSaved$.asObservable();
+  }
+
+  /**
+   * Returns all result groups
+   */
+  get ResultGroups() {
+    return this.resultGroup;
+  }
+
+  /**
+   * Returns Total Rating
+   */
+  get TotalRating() {
+    return this.totalRating;
+  }
+
+  /**
+   * Stores a new result from user for a question
+   * @param question Question that was answered
+   * @param result Result from user
+   */
+  saveResult(question: Question, result: number | string | Array&lt;string&gt;): void {
+    const groupNo &#x3D; this.questionSourceService.getQuestionGroupNoByQuestion(question);
+
+    // Insert Result Group if needed
+    if (!this.resultGroup[groupNo]) {
+      this.resultGroup[groupNo] &#x3D; {
+        QuestionGroup: this.questionSourceService.QuestionGroups[groupNo],
+        Results: new Array&lt;Result&gt;(),
+        GroupRating: AnswerRatingEnum.Bad,
+        CurrentGroupPoints: 0,
+        TotalPoints: this.questionSourceService.QuestionGroups[groupNo].Questions.length * AnswerRatingEnum.Good
+      };
+    }
+
+    // Determine Answer
+    const questionNo &#x3D; this.questionSourceService.getQuestionIndexInQuestionGroup(question);
+    let resultedanswer: Answer | undefined;
+    switch (question.EvaluationType) {
+      case EvaluationTypeEnum.EqualOrLess:
+        resultedanswer &#x3D; question.Answers.find((answer, index) &#x3D;&gt; result &lt;&#x3D; answer.Answer &amp;&amp; (index &#x3D;&#x3D;&#x3D; question.Answers.length - 1 || result &gt; question.Answers[index + 1].Answer));
+        break;
+      case EvaluationTypeEnum.EqualOrMore:
+        if (question.QuestionType &#x3D;&#x3D;&#x3D; QuestionTypeEnum.Checkbox &amp;&amp; Array.isArray(result)) {
+          resultedanswer &#x3D; question.Answers.find((answer, index) &#x3D;&gt; result.length &gt;&#x3D; answer.Answer &amp;&amp; (index &#x3D;&#x3D;&#x3D; question.Answers.length - 1 || result.length &lt; question.Answers[index + 1].Answer));
+        } else {
+          resultedanswer &#x3D; question.Answers.find((answer, index) &#x3D;&gt; result &gt;&#x3D; answer.Answer &amp;&amp; (index &#x3D;&#x3D;&#x3D; question.Answers.length - 1 || result &lt; question.Answers[index + 1].Answer));
+        }
+        break;
+      case EvaluationTypeEnum.Equal:
+        resultedanswer &#x3D; question.Answers.find(a &#x3D;&gt; a.Answer &#x3D;&#x3D; result);
+        break;
+    }
+
+    if (!resultedanswer) {
+      throw new Error(&#x60;Userinput matches to no answer: ${result}&#x60;);
+    }
+
+    // Set result and total group rating
+    this.resultGroup[groupNo].Results[questionNo] &#x3D; { Question: question, ResultedValue: result, ResultedAnswer: resultedanswer };
+    this.resultGroup[groupNo].CurrentGroupPoints &#x3D; this.sumPointsInGroup(groupNo);
+    this.resultGroup[groupNo].GroupRating &#x3D; this.determineRating(this.resultGroup[groupNo].CurrentGroupPoints);
+
+    // Set total points and total rating
+    this.totalRating.currentPoints &#x3D; 0;
+    this.totalRating.currentRating &#x3D; AnswerRatingEnum.Good;
+    this.resultGroup.forEach(resultGroup &#x3D;&gt; {
+      this.totalRating.currentPoints +&#x3D; resultGroup.CurrentGroupPoints;
+      if (resultGroup.GroupRating &lt; this.totalRating.currentRating) {
+        this.totalRating.currentRating &#x3D; resultGroup.GroupRating;
+      }
+    });
+
+    this.resultSaved$.next();
+  }
+
+  /**
+   * Check if all questions of a group are answered
+   * @param groupNo Number of Group
+   * @returns true if all questions of group are answered
+   */
+  isGroupCompleted(groupNo: number): boolean {
+    if (!this.questionSourceService.QuestionGroups[groupNo]) {
+      throw new Error(&quot;Unknown group given&quot;);
+    }
+    return this.questionSourceService.QuestionGroups[groupNo].Questions.length &#x3D;&#x3D;&#x3D; this.resultGroup[groupNo]?.Results.length &amp;&amp; // counts of questions and results are equal
+      this.resultGroup[groupNo]?.Results.find(result &#x3D;&gt; !result?.ResultedAnswer) &#x3D;&#x3D;&#x3D; undefined; // every result has an answer
+  }
+
+  /**
+   * Check if all questions of all groups are answered
+   * @returns true if all questions of all groups are answered
+   */
+  areAllGroupsCompleted(): boolean {
+    for (let groupNo of this.questionSourceService.QuestionGroups.keys()) {
+      if (!this.isGroupCompleted(groupNo)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Get result for given question
+   * @param question Question
+   * @returns Result or undefined if no answered yet
+   */
+  getResultForQuestion(question: Question): Result {
+    const groupNo &#x3D; this.questionSourceService.getQuestionGroupNoByQuestion(question);
+    const questionNo &#x3D; this.questionSourceService.getQuestionIndexInQuestionGroup(question);
+    return this.resultGroup[groupNo]?.Results[questionNo];
+  }
+
+  /**
+   * Fills all questions with results, only for demonstration and development purposes
+   */
+  autoFillQuestions() {
+    this.questionSourceService.QuestionGroups.forEach(group &#x3D;&gt; group.Questions.forEach(question &#x3D;&gt; {
+      if (question.QuestionType !&#x3D;&#x3D; QuestionTypeEnum.Checkbox) {
+        const randomAnswer &#x3D; question.Answers[Math.floor(Math.random() * question.Answers.length)]; // Pick random answer
+        this.saveResult(question, randomAnswer.Answer);
+      } else {
+        const randomAnswers &#x3D; question.CheckboxOptions.filter(() &#x3D;&gt; Math.random() &lt; 0.5);
+        this.saveResult(question, randomAnswers);
+      }
+    }));
+  }
+
+  /**
+   * Determine rating for given points
+   * @param points Points for determine rating
+   * @returns Rating
+   */
+  private determineRating(points: number): AnswerRatingEnum {
+    let rating: AnswerRatingEnum;
+    if (points % AnswerRatingEnum.Good &#x3D;&#x3D;&#x3D; 0) {
+      rating &#x3D; AnswerRatingEnum.Good;
+    } else if (points % AnswerRatingEnum.Medium &#x3D;&#x3D;&#x3D; 0) {
+      rating &#x3D; AnswerRatingEnum.Medium;
+    } else {
+      rating &#x3D; AnswerRatingEnum.Bad;
+    }
+    return rating;
+  }
+
+  /**
+   * Sum of all points in group
+   * @param groupNo Group for sum all points
+   * @returns Sum of all points
+   */
+  private sumPointsInGroup(groupNo: number): number {
+    let totalPoints &#x3D; 0;
+    this.resultGroup[groupNo].Results.forEach(r &#x3D;&gt; totalPoints +&#x3D; r.ResultedAnswer.Rating);
+    return totalPoints;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ResultService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
