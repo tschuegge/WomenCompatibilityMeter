@@ -22,7 +22,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?',
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: 'Für Mütter ist es oft nicht möglich, in den ersten Jahren der Mutterschaft, wieder Vollzeit zu arbeiten. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.' },
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: 'Für Mütter ist es oft nicht umsetzbar, in den ersten Jahren der Mutterschaft, in eine Vollzeitanstellung zurückzukehren. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.' },
           { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: 'Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.' },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
@@ -39,7 +39,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Verwendet die Firma in Stellenausschreibungen Phrasen wie: "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams"?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechter-Stereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
+          { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Geschlechtsrollenstereotypen und Klischees (wie z.B. "Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter." oder "Als Sekretärin sind Sie die gute Seele des Teams") sind zu vermeiden.' },
           { Answer: 'Nein', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
@@ -58,7 +58,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Good, Hint: '' },
-          { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'Beschreibende Inserate verhindern, dass Bewerbende Punkt für Punkt als erfüllt oder nicht erfüllt klassifiziert werden. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.' }
+          { Answer: 'Nein', Rating: AnswerRatingEnum.Medium, Hint: 'Beschreibende Inserate verhindern, dass Bewerbende Punkt für Punkt als erfüllt oder nicht erfüllt klassifizieren. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       }
@@ -72,14 +72,14 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Wie hoch ist der Frauenanteil in der Softwareentwicklung?',
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: 'Die erste Softwareentwicklerin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es schon Frauen gibt. Sobald Frauen in der Softwareentwicklung eingestellt sind, wird es einfacher sein weitere Softwareentwicklerinnen zu finden.' },
-          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: 'Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es schon Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.' },
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: 'Die erste Softwareentwicklerin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es bereits Frauen gibt. Sobald Frauen in der Softwareentwicklung angestellt sind, wird es einfacher sein weitere Softwareentwicklerinnen zu finden.' },
+          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: 'Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es bereits Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.' },
           { Answer: 30, Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         EvaluationType: EvaluationTypeEnum.EqualOrMore
       },
       {
-        Text: 'Gibt es Teams in denen nur eine Frau vertreten ist?',
+        Text: 'Gibt es Teams, in denen nur eine Frau vertreten ist?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Ja', Rating: AnswerRatingEnum.Medium, Hint: 'Frauen arbeiten tendenziell lieber in gemischten Teams.' },
@@ -97,24 +97,24 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Text: 'Eine Softwareentwicklerin bittet den Systemadministrator um Hilfe bei einem Netzwerkproblem. Als es nach zweimaligem Erklären immer noch nicht funktioniert, meint der Systemadministrator, dass es möglicherweise an ihren "langen Haaren" liegen würde. Wie wird diese Situation in der Firma beurteilt?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: 'Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.', Rating: AnswerRatingEnum.Bad, Hint: 'Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab.' },
+          { Answer: 'Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.', Rating: AnswerRatingEnum.Bad, Hint: 'Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab und wirken diskriminierend.' },
           { Answer: 'Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.', Rating: AnswerRatingEnum.Medium, Hint: 'Dass fehlender Respekt von Vorgesetzen nicht akzeptiert werden, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.' },
           { Answer: 'Das Team toleriert solches Verhalten nicht.', Rating: AnswerRatingEnum.Good, Hint: '' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
       {
-        Text: 'Ein Softwareentwicklerin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie würde in der Firma damit umgegangen?',
+        Text: 'Ein Softwareentwicklerin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie geht die Firma damit um?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Dies kommt in der Firma nicht vor, da ein regelmässiger Lohnvergleich durchgeführt wird.', Rating: AnswerRatingEnum.Good, Hint: '' },
-          { Answer: 'Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.', Rating: AnswerRatingEnum.Medium, Hint: 'Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen werden tendenziell weniger mit der Forderung für Lohnangleichung beim Vorgesetzte ankommen.' },
-          { Answer: 'Der Lohnunterschied lässt sich auf Grund erklären, da Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.', Rating: AnswerRatingEnum.Bad, Hint: 'Um attraktiv für Frauen zu sein ist der Grundsatz "gleicher Lohn für gleiche Arbeit" unerlässlich. Eine generell tiefere Eignung von Frauen für die Aufgaben in der Softwareentwicklung lässt sich nicht begründen.' }
+          { Answer: 'Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.', Rating: AnswerRatingEnum.Medium, Hint: 'Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen äussern sich tendenziell weniger mit der Forderung für eine Lohnangleichung beim Vorgesetzten.' },
+          { Answer: 'Der Lohnunterschied lässt sich aufgrund dessen erklären, da Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.', Rating: AnswerRatingEnum.Bad, Hint: 'Um attraktiv für Frauen zu sein, ist der Grundsatz "gleicher Lohn für gleiche Arbeit" unerlässlich. Eine generell tiefere Eignung von Frauen für die Aufgaben in der Softwareentwicklung lässt sich nicht begründen.' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
       {
-        Text: 'Eine neu einstellte Softwareentwicklerin kommuniziert sehr sachlich und direkt. Sie ist sehr selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?',
+        Text: 'Eine neu eingestellte Softwareentwicklerin kommuniziert sachlich und direkt. Sie ist selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?',
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: 'Sie würde als emanzipierte Feministin wahrgenommen.', Rating: AnswerRatingEnum.Bad, Hint: 'Eigenschaften wie die sachliche und direkte Kommunikation oder Selbstbewusstsein und Durchsetzungsstärke dürfen bei Frauen nicht anders bewertet werden, wie bei Männern.' },
@@ -129,7 +129,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Answers: [
           { Answer: 'Die Firma ist stolz auf die Frau und nützt die Situation, um eine Image-Kampagne zu starten, bei der auf die Diversität und besondere Frauenfreundlichkeit im Team eingegangen wird.', Rating: AnswerRatingEnum.Bad, Hint: 'Frauen mögen es häufig nicht, wenn sie auf ein Podest gehoben werden, nur weil sie Frauen sind.' },
           { Answer: 'Die Mitarbeiterin wird wie die anderen Mitarbeitenden ins Team integriert und nicht besonders behandelt.', Rating: AnswerRatingEnum.Good, Hint: '' },
-          { Answer: 'Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird, nur weil sie Frauen sind. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.' }
+          { Answer: 'Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       }
@@ -145,7 +145,7 @@ export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
         Answers: [
           { Answer: 'in kleinen interdisziplinären Teams mit viel Austausch unter den Mitgliedern', Rating: AnswerRatingEnum.Good, Hint: '' },
           { Answer: 'die Entwicklerinnen und Entwickler arbeiten meistens allein und ungestört mit wenig Austausch zu anderen Mitarbeitenden', Rating: AnswerRatingEnum.Medium, Hint: 'Häufig sind das Team und der Austausch untereinander eine wichtige Komponente. Das Bild vom einsamen Entwickler schreckt viele ab, diesen Beruf auszuüben.' },
-          { Answer: 'die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden. Pizza und Coke sind ein ständiger Begleiter', Rating: AnswerRatingEnum.Bad, Hint: 'Solche Klischees wie "einsamer Nerd, umgeben von Pizza und Coke" schrecken viele Personen und verhindern, dass Menschen in die Softwareentwicklung einsteigen.' }
+          { Answer: 'die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden, Pizza und Coke sind ständige Begleiter', Rating: AnswerRatingEnum.Bad, Hint: 'Solche Klischees wie "einsamer Nerd, umgeben von Pizza und Coke" schrecken viele Personen ab und sie verhindern, dass Menschen in die Softwareentwicklung einsteigen.' }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
