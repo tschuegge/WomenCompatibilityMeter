@@ -4,7 +4,7 @@
   "author": "Jürg Danuser",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ..--configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~12.1.4",
     "@angular/platform-browser-dynamic": "~12.1.4",
     "@angular/router": "~12.1.4",
+    "@angular/service-worker": "~12.1.4",
     "@ionic/angular": "^5.6.12",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
