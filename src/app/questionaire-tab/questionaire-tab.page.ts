@@ -7,6 +7,9 @@ import { QuestionGroup } from '../shared/model/question-group';
 import { QuestionSourceService } from '../shared/question-source.service';
 import { ResultService } from '../shared/result.service';
 
+/**
+ * Parent page for tab 'Fragebogen', it holds the control buttons an the question view
+ */
 @Component({
   selector: 'app-questionaire-tab',
   templateUrl: './questionaire-tab.page.html',
@@ -32,14 +35,30 @@ import { ResultService } from '../shared/result.service';
 })
 export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
+  /**
+   * Instance of slide control
+   */
   @ViewChild(IonSlides) slider: IonSlides;
 
+  /**
+   * Questionaire for use in template
+   */
   questionGroups: Array<QuestionGroup>;
 
+  /**
+   * Animation state for back button
+   */
   animationStateBackButton = "";
-  animationStateNextButton = "";
-  animationStateResultButton = "";
 
+  /**
+   * Animation state for next button
+   */
+  animationStateNextButton = "";
+
+  /**
+   * Animation state for result button
+   */
+  animationStateResultButton = "";
 
   private unsubscribe$ = new Subject<void>();
 
@@ -51,22 +70,33 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     this.questionGroups = this.questionSourceService.QuestionGroups;
   }
 
-
+  /**
+   * Subscribe observables for changes in result groups (answering a question)
+   */
   ngOnInit(): void {
     this.resultService.ResultSavedObservable.pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(() => this.setControlButtonsAnimationState());
   }
 
+  /**
+   * Save unsubscribe obervables for preventing memory leaks
+   */
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
 
+  /**
+   * Set view state after view initialisation
+   */
   ngAfterViewInit(): void {
     this.setControlButtonsAnimationState();
   }
 
+  /**
+   * Set animation state for control buttons
+   */
   async setControlButtonsAnimationState(): Promise<void> {
     if (!!this.slider) {
       if (await this.slider.isBeginning()) {
@@ -85,6 +115,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  /**
+   * Go to next slide
+   */
   async gotoNextSlide(): Promise<void> {
     const currentGroup = await this.slider.getActiveIndex();
     if (this.resultService.isGroupCompleted(currentGroup)) {
@@ -100,6 +133,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  /**
+   * Go to previous slide
+   */
   gotoPrevSlide(): void {
     this.slider.slidePrev();
   }

@@ -3,10 +3,17 @@
 	"tasks": [
 		{
 			"type": "npm",
-			"script": "doc",
+			"script": "builddoc",
 			"problemMatcher": [],
 			"label": "Build documentation",
-			"detail": "compodoc -p tsconfig.doc.json --hideGenerator --disableCoverage"
+			"detail": "compodoc --tsconfig tsconfig.doc.json --output docs --name 'Women Compatibility Meter Documentation' --hideGenerator --disableCoverage --disablePrivate"
+		},
+		{
+			"type": "npm",
+			"script": "servedoc",
+			"problemMatcher": [],
+			"label": "npm: servedoc",
+			"detail": "compodoc --tsconfig tsconfig.doc.json --output docs --name 'Women Compatibility Meter Documentation' --hideGenerator --disablePrivate --serve --watch"
 		},
 		{
 			"type": "npm",
@@ -25,6 +32,13 @@
 			"problemMatcher": [],
 			"label": "Start Dev Server on localhost:4200",
 			"detail": "ng serve"
+		},
+		{
+			"type": "npm",
+			"script": "lint",
+			"problemMatcher": [],
+			"label": "npm: lint",
+			"detail": "ng lint"
 		}
 	]
 }

@@ -3,6 +3,9 @@ import { QuestionTypeEnum } from 'src/app/shared/model/question-type-enum';
 import { EvaluationTypeEnum } from 'src/app/shared/model/evaluation-type-enum';
 import { AnswerRatingEnum } from 'src/app/shared/model/answer-rating-enum';
 
+/**
+ * Questionaire in german
+ */
 export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
   {
     GroupName: 'Teilzeit',

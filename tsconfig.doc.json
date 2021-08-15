@@ -5,6 +5,7 @@
     "src/**/*.ts"
   ],
   "exclude": [
+    "src/environments/*",
     "src/**/*-routing.module.ts",
     "src/test.ts"
   ]

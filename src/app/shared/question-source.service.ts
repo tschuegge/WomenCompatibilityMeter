@@ -3,6 +3,9 @@ import { QUESTIONS_CONFIG } from 'src/config/questions.config';
 import { Question } from './model/question';
 import { QuestionGroup } from './model/question-group';
 
+/**
+ * Holds questionaire
+ */
 @Injectable({
   providedIn: 'root'
 })

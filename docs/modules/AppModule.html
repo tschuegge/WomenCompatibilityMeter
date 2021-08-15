@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -210,6 +210,8 @@ import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { QuestionSourceService } from &#x27;./shared/question-source.service&#x27;;
 import { ResultService } from &#x27;./shared/result.service&#x27;;
+import { ServiceWorkerModule } from &#x27;@angular/service-worker&#x27;;
+import { environment } from &#x27;../environments/environment&#x27;;
 
 @NgModule({
   declarations: [AppComponent],
@@ -217,7 +219,13 @@ import { ResultService } from &#x27;./shared/result.service&#x27;;
     BrowserModule,
     BrowserAnimationsModule,
     IonicModule.forRoot({ mode: &quot;ios&quot; }),
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register(&#x27;ngsw-worker.js&#x27;, {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: &#x27;registerWhenStable:30000&#x27;
+    })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

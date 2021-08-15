@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -68,14 +68,15 @@
 </p>
 
 
-
-
     <p class="comment">
-        <h3>Implements</h3>
+        <h3>Description</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+        <p>Parent page for tab &#39;Info&#39;</p>
+
     </p>
+
+
 
 
 <section>
@@ -140,20 +141,6 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -163,72 +150,12 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/info-tab/info-tab.page.ts:11</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
 
 
 
 
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/info-tab/info-tab.page.ts:15</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section>
     
     <h3 id="inputs">
@@ -252,10 +179,16 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/info-tab/info-tab.page.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/info-tab/info-tab.page.ts:17</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Version for use in template</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -265,22 +198,23 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
+/**
+ * Parent page for tab &#x27;Info&#x27;
+ */
 @Component({
   selector: &#x27;app-info-tab&#x27;,
   templateUrl: &#x27;./info-tab.page.html&#x27;,
   styleUrls: [&#x27;./info-tab.page.scss&#x27;],
 })
-export class InfoTabPage implements OnInit {
+export class InfoTabPage {
 
+  /**
+   * Version for use in template
+   */
   version &#x3D; environment.version;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
 </code></pre>

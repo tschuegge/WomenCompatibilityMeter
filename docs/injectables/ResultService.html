@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -61,6 +61,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Store and calculate results</p>
+
+            </p>
 
 
 
@@ -68,29 +75,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#resultGroup" >resultGroup</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#resultSaved$" >resultSaved$</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#totalRating" >totalRating</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -107,10 +91,6 @@
                                 <a href="#autoFillQuestions" >autoFillQuestions</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#determineRating" >determineRating</a>
-                            </li>
-                            <li>
                                 <a href="#getResultForQuestion" >getResultForQuestion</a>
                             </li>
                             <li>
@@ -118,10 +98,6 @@
                             </li>
                             <li>
                                 <a href="#saveResult" >saveResult</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#sumPointsInGroup" >sumPointsInGroup</a>
                             </li>
                         </ul>
                     </td>
@@ -166,7 +142,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/result.service.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/shared/result.service.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -229,8 +205,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="132"
-                            class="link-to-prism">src/app/shared/result.service.ts:132</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/app/shared/result.service.ts:138</a></div>
                 </td>
             </tr>
 
@@ -274,8 +250,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">src/app/shared/result.service.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/app/shared/result.service.ts:162</a></div>
                 </td>
             </tr>
 
@@ -287,84 +263,6 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="determineRating"></a>
-                    <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>determineRating</b></span>
-                        <a href="#determineRating"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>determineRating(points: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="172"
-                            class="link-to-prism">src/app/shared/result.service.ts:172</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Determine rating for given points</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>points</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Points for determine rating</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/Answer.html" target="_self" >AnswerRatingEnum</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Rating</p>
 
                     </div>
                 </td>
@@ -391,8 +289,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="146"
-                            class="link-to-prism">src/app/shared/result.service.ts:146</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/app/shared/result.service.ts:153</a></div>
                 </td>
             </tr>
 
@@ -467,8 +365,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="120"
-                            class="link-to-prism">src/app/shared/result.service.ts:120</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/shared/result.service.ts:125</a></div>
                 </td>
             </tr>
 
@@ -543,8 +441,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/shared/result.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/shared/result.service.ts:64</a></div>
                 </td>
             </tr>
 
@@ -614,174 +512,6 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="sumPointsInGroup"></a>
-                    <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>sumPointsInGroup</b></span>
-                        <a href="#sumPointsInGroup"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>sumPointsInGroup(groupNo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="189"
-                            class="link-to-prism">src/app/shared/result.service.ts:189</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Sum of all points in group</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>groupNo</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Group for sum all points</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>Sum of all points</p>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-            <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="resultGroup"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>resultGroup</b></span>
-                        <a href="#resultGroup"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Array&lt;ResultGroup&gt;()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/result.service.ts:19</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="resultSaved$"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>resultSaved$</b></span>
-                        <a href="#resultSaved$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/result.service.ts:20</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="totalRating"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>totalRating</b></span>
-                        <a href="#totalRating"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/TotalRating.html" target="_self" >TotalRating</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{ currentPoints: 0, totalPoints: 0, currentRating: AnswerRatingEnum.Bad }</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/result.service.ts:22</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
 </section>
 
             <section>
@@ -804,7 +534,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/result.service.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/result.service.ts:40</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -833,7 +563,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/shared/result.service.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/result.service.ts:47</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -862,7 +592,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/result.service.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/result.service.ts:54</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -893,6 +623,9 @@ import { ResultGroup } from &#x27;./model/result-group&#x27;;
 import { TotalRating } from &#x27;./model/total-rating&#x27;;
 import { QuestionSourceService } from &#x27;./question-source.service&#x27;;
 
+/**
+ * Store and calculate results
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
@@ -936,6 +669,7 @@ export class ResultService {
 
   /**
    * Stores a new result from user for a question
+   *
    * @param question Question that was answered
    * @param result Result from user
    */
@@ -968,7 +702,7 @@ export class ResultService {
         }
         break;
       case EvaluationTypeEnum.Equal:
-        resultedanswer &#x3D; question.Answers.find(a &#x3D;&gt; a.Answer &#x3D;&#x3D; result);
+        resultedanswer &#x3D; question.Answers.find(a &#x3D;&gt; a.Answer &#x3D;&#x3D;&#x3D; result);
         break;
     }
 
@@ -996,6 +730,7 @@ export class ResultService {
 
   /**
    * Check if all questions of a group are answered
+   *
    * @param groupNo Number of Group
    * @returns true if all questions of group are answered
    */
@@ -1009,10 +744,11 @@ export class ResultService {
 
   /**
    * Check if all questions of all groups are answered
+   *
    * @returns true if all questions of all groups are answered
    */
   areAllGroupsCompleted(): boolean {
-    for (let groupNo of this.questionSourceService.QuestionGroups.keys()) {
+    for (const groupNo of this.questionSourceService.QuestionGroups.keys()) {
       if (!this.isGroupCompleted(groupNo)) {
         return false;
       }
@@ -1022,6 +758,7 @@ export class ResultService {
 
   /**
    * Get result for given question
+   *
    * @param question Question
    * @returns Result or undefined if no answered yet
    */
@@ -1048,6 +785,7 @@ export class ResultService {
 
   /**
    * Determine rating for given points
+   *
    * @param points Points for determine rating
    * @returns Rating
    */
@@ -1065,6 +803,7 @@ export class ResultService {
 
   /**
    * Sum of all points in group
+   *
    * @param groupNo Group for sum all points
    * @returns Sum of all points
    */

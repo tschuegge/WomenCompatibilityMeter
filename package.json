@@ -4,7 +4,9 @@
   "author": "Jürg Danuser",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build --configuration production || compodoc -p tsconfig.doc.json  --output docs  --hideGenerator --disableCoverage",
+    "build": "ng build --configuration production",
+    "builddoc": "compodoc --tsconfig tsconfig.doc.json --output docs --name 'Women Compatibility Meter Documentation' --hideGenerator --disableCoverage --disablePrivate",
+    "servedoc": "compodoc --tsconfig tsconfig.doc.json --output docs --name 'Women Compatibility Meter Documentation' --hideGenerator --disablePrivate --serve --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

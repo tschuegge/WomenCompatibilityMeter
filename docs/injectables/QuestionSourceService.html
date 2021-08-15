@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -61,6 +61,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Holds questionaire</p>
+
+            </p>
 
 
 
@@ -68,21 +75,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#questionGroupSource" >questionGroupSource</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -150,8 +142,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/shared/question-source.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/shared/question-source.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -226,8 +218,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/app/shared/question-source.service.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/shared/question-source.service.ts:43</a></div>
                 </td>
             </tr>
 
@@ -283,44 +275,6 @@
         </tbody>
     </table>
 </section>
-            <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="questionGroupSource"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>questionGroupSource</b></span>
-                        <a href="#questionGroupSource"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Array&lt;QuestionGroup&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>QUESTIONS_CONFIG</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/question-source.service.ts:11</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
 
             <section>
     <h3 id="accessors">
@@ -342,7 +296,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/question-source.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/question-source.service.ts:19</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -365,12 +319,15 @@ import { QUESTIONS_CONFIG } from &#x27;src/config/questions.config&#x27;;
 import { Question } from &#x27;./model/question&#x27;;
 import { QuestionGroup } from &#x27;./model/question-group&#x27;;
 
+/**
+ * Holds questionaire
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class QuestionSourceService {
 
-  private questionGroupSource: Array&lt;QuestionGroup&gt; &#x3D; QUESTIONS_CONFIG
+  private questionGroupSource: Array&lt;QuestionGroup&gt; &#x3D; QUESTIONS_CONFIG;
 
   /**
    * All Question Groups with questions
@@ -381,13 +338,12 @@ export class QuestionSourceService {
 
   /**
    * Returns index of Question Group with given question
+   *
    * @param question Question of Question Group to find
    * @returns Index of Question Group with given question
    */
   getQuestionGroupNoByQuestion(question: Question): number {
-    const groupIndex &#x3D; this.questionGroupSource.findIndex(questionGroup &#x3D;&gt; {
-      return questionGroup.Questions.find(questionInGroup &#x3D;&gt; questionInGroup &#x3D;&#x3D;&#x3D; question) !&#x3D;&#x3D; undefined
-    });
+    const groupIndex &#x3D; this.questionGroupSource.findIndex(questionGroup &#x3D;&gt; questionGroup.Questions.find(questionInGroup &#x3D;&gt; questionInGroup &#x3D;&#x3D;&#x3D; question) !&#x3D;&#x3D; undefined);
     if (groupIndex &#x3D;&#x3D;&#x3D; -1) {
       throw new Error(&quot;Question not found in Question Group&quot;);
     }
@@ -396,6 +352,7 @@ export class QuestionSourceService {
 
   /**
    * Returns index of question in question group
+   *
    * @param question Question to find
    * @returns Index of question in question group
    */

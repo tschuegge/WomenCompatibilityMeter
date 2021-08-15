@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -68,6 +68,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Display a question group</p>
+
+    </p>
 
 
 
@@ -162,9 +169,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/questionaire-tab/question-group-view/question-group-view.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/questionaire-tab/question-group-view/question-group-view.component.ts:17</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Question group to show</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -180,6 +193,9 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { QuestionGroup } from &#x27;src/app/shared/model/question-group&#x27;;
 
+/**
+ * Display a question group
+ */
 @Component({
   selector: &#x27;app-question-group-view&#x27;,
   templateUrl: &#x27;./question-group-view.component.html&#x27;,
@@ -187,6 +203,9 @@ import { QuestionGroup } from &#x27;src/app/shared/model/question-group&#x27;;
 })
 export class QuestionGroupViewComponent {
 
+  /**
+   * Question group to show
+   */
   @Input() questionGroup: QuestionGroup;
 
 }

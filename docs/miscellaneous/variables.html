@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -59,12 +59,6 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
-                        </li>
-                        <li>
                             <a href="#QUESTIONS_CONFIG" title="src/config/questions.config.ts" ><b>QUESTIONS_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../questions.config.ts)</a>
                         </li>
                     </ul>
@@ -74,72 +68,6 @@
     </table>
 </section>
 
-    <h3>src/environments/environment.prod.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="environment"></a>
-                    <span class="name">
-                        <span ><b>environment</b></span>
-                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{
-  production: true,
-  autoFillQuestions: false,
-  version: require(&quot;../../package.json&quot;).version
-}</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
-    <h3>src/environments/environment.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="environment"></a>
-                    <span class="name">
-                        <span ><b>environment</b></span>
-                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{
-  production: false,
-  autoFillQuestions: true,
-  version: require(&quot;../../package.json&quot;).version + &quot; - Development Build&quot;
-}</code>
-                    </td>
-                </tr>
-
-
-        </tbody>
-    </table>
-</section>
     <h3>src/config/questions.config.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -170,8 +98,8 @@
         Text: &#x27;Zu welchem Arbeitspensum in Prozent müssen Mitarbeitende mindestens angestellt sein?&#x27;,
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Das Ermöglichen von Teilzeit hilft Frauen (insbesondere Müttern) einer Erwerbstätigkeit nachzugehen.&#x27; },
-          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Tiefere Teilzeitpensen helfen Frauen (insbesondere Müttern) einer Erwerbstätigkeit nachzugehen.&#x27; },
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Das Ermöglichen von Teilzeit hilft Frauen (insbesondere Müttern), einer Erwerbstätigkeit nachzugehen.&#x27; },
+          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Tiefere Teilzeitpensen helfen Frauen (insbesondere Müttern), einer Erwerbstätigkeit nachzugehen.&#x27; },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.EqualOrLess
@@ -180,7 +108,7 @@
         Text: &#x27;Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?&#x27;,
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Für Mütter ist es oft nicht möglich, in den ersten Jahren der Mutterschaft, wieder Vollzeit zu arbeiten. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.&#x27; },
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Für Mütter ist es oft nicht umsetzbar, in den ersten Jahren der Mutterschaft, in eine Vollzeitanstellung zurückzukehren. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.&#x27; },
           { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.&#x27; },
           { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
         ],
@@ -197,13 +125,13 @@
         Text: &#x27;Verwendet die Firma in Stellenausschreibungen Phrasen wie: &quot;Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter.&quot; oder &quot;Als Sekretärin sind Sie die gute Seele des Teams&quot;?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Geschlechter-Stereotypen und Klischees (wie z.B. &quot;Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter.&quot; oder &quot;Als Sekretärin sind Sie die gute Seele des Teams&quot;) sind zu vermeiden.&#x27; },
+          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Geschlechterrollenstereotypen und Klischees (wie z.B. &quot;Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Entwicklungsleiter.&quot; oder &quot;Als Sekretärin sind Sie die gute Seele des Teams&quot;) sind zu vermeiden.&#x27; },
           { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
       {
-        Text: &#x27;Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, nahe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt?&#x27;,
+        Text: &#x27;Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, Nähe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
@@ -216,7 +144,7 @@
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
-          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Beschreibende Inserate verhindern, dass Bewerbende Punkt für Punkt als erfüllt oder nicht erfüllt klassifiziert werden. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.&#x27; }
+          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Beschreibende Inserate verhindern, dass sich bewerbende Personen Punkt für Punkt als erfüllt oder nicht erfüllt klassifizieren. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       }
@@ -230,14 +158,14 @@
         Text: &#x27;Wie hoch ist der Frauenanteil in der Softwareentwicklung?&#x27;,
         QuestionType: QuestionTypeEnum.PercentSlider,
         Answers: [
-          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Die erste Softwareentwicklerin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es schon Frauen gibt. Sobald Frauen in der Softwareentwicklung eingestellt sind, wird es einfacher sein weitere Softwareentwicklerinnen zu finden.&#x27; },
-          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es schon Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.&#x27; },
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Die erste Softwareentwicklerin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es bereits Frauen gibt. Sobald Frauen in der Softwareentwicklung angestellt sind, wird es einfacher weitere Softwareentwicklerinnen zu finden.&#x27; },
+          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Der Anteil von Softwareentwicklerinnen ist gering. Frauen arbeiten tendenziell lieber in Teams, in denen es bereits Frauen gibt. Da es bereits Softwareentwicklerinnen in der Firma gibt, ist die Erhöhung des Frauenanteils in der Softwareentwicklung eher einfach.&#x27; },
           { Answer: 30, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.EqualOrMore
       },
       {
-        Text: &#x27;Gibt es Teams in denen nur eine Frau vertreten ist?&#x27;,
+        Text: &#x27;Gibt es Teams, in denen nur eine Frau vertreten ist?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen arbeiten tendenziell lieber in gemischten Teams.&#x27; },
@@ -255,29 +183,29 @@
         Text: &#x27;Eine Softwareentwicklerin bittet den Systemadministrator um Hilfe bei einem Netzwerkproblem. Als es nach zweimaligem Erklären immer noch nicht funktioniert, meint der Systemadministrator, dass es möglicherweise an ihren &quot;langen Haaren&quot; liegen würde. Wie wird diese Situation in der Firma beurteilt?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
-          { Answer: &#x27;Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab.&#x27; },
-          { Answer: &#x27;Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Dass fehlender Respekt von Vorgesetzen nicht akzeptiert werden, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.&#x27; },
-          { Answer: &#x27;Das Team toleriert solches Verhalten nicht.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+          { Answer: &#x27;Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab und wirken diskriminierend.&#x27; },
+          { Answer: &#x27;Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Dass fehlender Respekt von Vorgesetzten nicht akzeptiert wird, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.&#x27; },
+          { Answer: &#x27;Das Team toleriert ein solches Verhalten nicht.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
       {
-        Text: &#x27;Ein Softwareentwicklerin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie würde in der Firma damit umgegangen?&#x27;,
+        Text: &#x27;Eine Softwareentwicklerin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie geht die Firma damit um?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: &#x27;Dies kommt in der Firma nicht vor, da ein regelmässiger Lohnvergleich durchgeführt wird.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
-          { Answer: &#x27;Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen werden tendenziell weniger mit der Forderung für Lohnangleichung beim Vorgesetzte ankommen.&#x27; },
-          { Answer: &#x27;Der Lohnunterschied lässt sich auf Grund erklären, da Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Um attraktiv für Frauen zu sein ist der Grundsatz &quot;gleicher Lohn für gleiche Arbeit&quot; unerlässlich. Eine generell tiefere Eignung von Frauen für die Aufgaben in der Softwareentwicklung lässt sich nicht begründen.&#x27; }
+          { Answer: &#x27;Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst, wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen äussern sich tendenziell weniger mit der Forderung für eine Lohnangleichung beim Vorgesetzten.&#x27; },
+          { Answer: &#x27;Der Lohnunterschied lässt sich aufgrund dessen erklären, dass Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Um attraktiv für Frauen zu sein, ist der Grundsatz &quot;gleicher Lohn für gleiche Arbeit&quot; unerlässlich. Eine generell tiefere Eignung von Frauen für die Aufgaben in der Softwareentwicklung lässt sich nicht begründen.&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
       {
-        Text: &#x27;Eine neu einstellte Softwareentwicklerin kommuniziert sehr sachlich und direkt. Sie ist sehr selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?&#x27;,
+        Text: &#x27;Eine neu eingestellte Softwareentwicklerin kommuniziert sachlich und direkt. Sie ist selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?&#x27;,
         QuestionType: QuestionTypeEnum.RadioGroup,
         Answers: [
           { Answer: &#x27;Sie würde als emanzipierte Feministin wahrgenommen.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Eigenschaften wie die sachliche und direkte Kommunikation oder Selbstbewusstsein und Durchsetzungsstärke dürfen bei Frauen nicht anders bewertet werden, wie bei Männern.&#x27; },
           { Answer: &#x27;Sie würde nicht speziell wahrgenommen werden.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
-          { Answer: &#x27;Sie würde besonders für ihre Professionalität gelobt werden.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen mögen es häufig nicht, wenn sie nur wegen dem Frau-sein auf ein Podest gehoben werden.&#x27; }
+          { Answer: &#x27;Sie würde besonders für ihre Professionalität gelobt werden.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen mögen es häufig nicht, wenn sie nur wegen des Frauseins auf ein Podest gehoben werden.&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
@@ -287,7 +215,7 @@
         Answers: [
           { Answer: &#x27;Die Firma ist stolz auf die Frau und nützt die Situation, um eine Image-Kampagne zu starten, bei der auf die Diversität und besondere Frauenfreundlichkeit im Team eingegangen wird.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Frauen mögen es häufig nicht, wenn sie auf ein Podest gehoben werden, nur weil sie Frauen sind.&#x27; },
           { Answer: &#x27;Die Mitarbeiterin wird wie die anderen Mitarbeitenden ins Team integriert und nicht besonders behandelt.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
-          { Answer: &#x27;Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird, nur weil sie Frauen sind. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.&#x27; }
+          { Answer: &#x27;Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       }
@@ -303,7 +231,7 @@
         Answers: [
           { Answer: &#x27;in kleinen interdisziplinären Teams mit viel Austausch unter den Mitgliedern&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
           { Answer: &#x27;die Entwicklerinnen und Entwickler arbeiten meistens allein und ungestört mit wenig Austausch zu anderen Mitarbeitenden&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Häufig sind das Team und der Austausch untereinander eine wichtige Komponente. Das Bild vom einsamen Entwickler schreckt viele ab, diesen Beruf auszuüben.&#x27; },
-          { Answer: &#x27;die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden. Pizza und Coke sind ein ständiger Begleiter&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Solche Klischees wie &quot;einsamer Nerd, umgeben von Pizza und Coke&quot; schrecken viele Personen und verhindern, dass Menschen in die Softwareentwicklung einsteigen.&#x27; }
+          { Answer: &#x27;die Entwicklerinnen und Entwickler sind meistens isoliert und haben wenig Kontakt zu anderen Mitarbeitenden, Pizza und Coke sind ständige Begleiter&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Solche Klischees wie &quot;einsamer Nerd, umgeben von Pizza und Coke&quot; schrecken viele Personen ab und verhindern, dass Menschen in die Softwareentwicklung einsteigen.&#x27; }
         ],
         EvaluationType: EvaluationTypeEnum.Equal
       },
@@ -384,6 +312,12 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Questionaire in german</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

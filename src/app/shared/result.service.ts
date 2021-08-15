@@ -11,6 +11,9 @@ import { ResultGroup } from './model/result-group';
 import { TotalRating } from './model/total-rating';
 import { QuestionSourceService } from './question-source.service';
 
+/**
+ * Store and calculate results
+ */
 @Injectable({
   providedIn: 'root'
 })

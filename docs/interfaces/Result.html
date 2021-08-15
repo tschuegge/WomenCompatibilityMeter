@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>women-compatibility-meter documentation</title>
+        <title>Women Compatibility Meter Documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">women-compatibility-meter documentation</a>
+            <a href="../" class="navbar-brand">Women Compatibility Meter Documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -68,6 +68,13 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Result of a question</p>
+
+            </p>
 
 
         <section>
@@ -142,6 +149,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Represented question</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -175,6 +188,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Determined answer</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -208,6 +227,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Raw input from user</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -218,11 +243,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Answer } from &quot;./answer&quot;;
 import { Question } from &quot;./question&quot;;
 
+/**
+ * Result of a question
+ */
 export interface Result {
+
+  /**
+   * Represented question
+   */
   Question: Question;
+
+  /**
+   * Determined answer
+   */
   ResultedAnswer: Answer;
+
+  /**
+   * Raw input from user
+   */
   ResultedValue: number | string | Array&lt;string&gt;;
-}</code></pre>
+}
+</code></pre>
     </div>
 </div>
 
