@@ -42,6 +42,11 @@ export class DetailsPage implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
   renderArrayAsHtml(array: number | string | Array<string>) {
     if (Array.isArray(array)) {
       return this.domSanitizer.bypassSecurityTrustHtml(array.join("<br>"));
