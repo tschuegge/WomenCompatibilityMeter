@@ -8,7 +8,7 @@ import { QuestionGroup } from './model/question-group';
 })
 export class QuestionSourceService {
 
-  private questionGroupSource: Array<QuestionGroup> = QUESTIONS_CONFIG
+  private questionGroupSource: Array<QuestionGroup> = QUESTIONS_CONFIG;
 
   /**
    * All Question Groups with questions
@@ -19,13 +19,12 @@ export class QuestionSourceService {
 
   /**
    * Returns index of Question Group with given question
+   *
    * @param question Question of Question Group to find
    * @returns Index of Question Group with given question
    */
   getQuestionGroupNoByQuestion(question: Question): number {
-    const groupIndex = this.questionGroupSource.findIndex(questionGroup => {
-      return questionGroup.Questions.find(questionInGroup => questionInGroup === question) !== undefined
-    });
+    const groupIndex = this.questionGroupSource.findIndex(questionGroup => questionGroup.Questions.find(questionInGroup => questionInGroup === question) !== undefined);
     if (groupIndex === -1) {
       throw new Error("Question not found in Question Group");
     }
@@ -34,6 +33,7 @@ export class QuestionSourceService {
 
   /**
    * Returns index of question in question group
+   *
    * @param question Question to find
    * @returns Index of question in question group
    */

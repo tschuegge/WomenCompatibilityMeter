@@ -54,6 +54,7 @@ export class ResultService {
 
   /**
    * Stores a new result from user for a question
+   *
    * @param question Question that was answered
    * @param result Result from user
    */
@@ -86,7 +87,7 @@ export class ResultService {
         }
         break;
       case EvaluationTypeEnum.Equal:
-        resultedanswer = question.Answers.find(a => a.Answer == result);
+        resultedanswer = question.Answers.find(a => a.Answer === result);
         break;
     }
 
@@ -114,6 +115,7 @@ export class ResultService {
 
   /**
    * Check if all questions of a group are answered
+   *
    * @param groupNo Number of Group
    * @returns true if all questions of group are answered
    */
@@ -127,10 +129,11 @@ export class ResultService {
 
   /**
    * Check if all questions of all groups are answered
+   *
    * @returns true if all questions of all groups are answered
    */
   areAllGroupsCompleted(): boolean {
-    for (let groupNo of this.questionSourceService.QuestionGroups.keys()) {
+    for (const groupNo of this.questionSourceService.QuestionGroups.keys()) {
       if (!this.isGroupCompleted(groupNo)) {
         return false;
       }
@@ -140,6 +143,7 @@ export class ResultService {
 
   /**
    * Get result for given question
+   *
    * @param question Question
    * @returns Result or undefined if no answered yet
    */
@@ -166,6 +170,7 @@ export class ResultService {
 
   /**
    * Determine rating for given points
+   *
    * @param points Points for determine rating
    * @returns Rating
    */
@@ -183,6 +188,7 @@ export class ResultService {
 
   /**
    * Sum of all points in group
+   *
    * @param groupNo Group for sum all points
    * @returns Sum of all points
    */

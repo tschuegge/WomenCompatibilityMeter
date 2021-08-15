@@ -20,9 +20,9 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
-            <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
-            <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+            <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Bad" name="heart-dislike"></ion-icon>
           </ion-col>
           <ion-col size="10">
             <h1>{{(resultGroup.CurrentGroupPoints / resultGroup.TotalPoints) | percent}}</h1>
@@ -44,16 +44,16 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-icon class="resultIcon" color="success" *ngIf="result.ResultedAnswer.Rating  == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
-            <ion-icon class="resultIcon" color="warning" *ngIf="result.ResultedAnswer.Rating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
-            <ion-icon class="resultIcon" color="danger" *ngIf="result.ResultedAnswer.Rating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+            <ion-icon class="resultIcon" color="success" *ngIf="result.ResultedAnswer.Rating  === AnswerRatingEnum.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="result.ResultedAnswer.Rating === AnswerRatingEnum.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="result.ResultedAnswer.Rating === AnswerRatingEnum.Bad" name="heart-dislike"></ion-icon>
           </ion-col>
           <ion-col size="10">
             <h2>Gegebene Antwort</h2>
             <ng-container [ngSwitch]="result.Question.QuestionType">
-              <p *ngSwitchCase="QUESTION_TYPE_ENUM.PercentSlider">{{result.ResultedValue}}%</p>
-              <p *ngSwitchCase="QUESTION_TYPE_ENUM.RadioGroup">{{result.ResultedValue}}</p>
-              <p *ngSwitchCase="QUESTION_TYPE_ENUM.Checkbox" [innerHtml]="renderArrayAsHtml(result.ResultedValue)"></p>
+              <p *ngSwitchCase="QuestionTypeEnum.PercentSlider">{{result.ResultedValue}}%</p>
+              <p *ngSwitchCase="QuestionTypeEnum.RadioGroup">{{result.ResultedValue}}</p>
+              <p *ngSwitchCase="QuestionTypeEnum.Checkbox" [innerHtml]="renderArrayAsHtml(result.ResultedValue)"></p>
             </ng-container>
             <ng-container *ngIf="result.ResultedAnswer.Hint">
               <hr>

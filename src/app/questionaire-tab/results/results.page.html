@@ -19,9 +19,9 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-icon class="resultIcon" color="success" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
-            <ion-icon class="resultIcon" color="warning" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
-            <ion-icon class="resultIcon" color="danger" *ngIf="TotalRating.currentRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+            <ion-icon class="resultIcon" color="success" *ngIf="TotalRating.currentRating === AnswerRatingEnum.Good" name="heart"></ion-icon>
+            <ion-icon class="resultIcon" color="warning" *ngIf="TotalRating.currentRating === AnswerRatingEnum.Medium" name="heart-half"></ion-icon>
+            <ion-icon class="resultIcon" color="danger" *ngIf="TotalRating.currentRating === AnswerRatingEnum.Bad" name="heart-dislike"></ion-icon>
           </ion-col>
           <ion-col size="10">
             <h1>{{(TotalRating.currentPoints/TotalRating.totalPoints) | percent}}</h1>
@@ -45,9 +45,9 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Good" name="heart"></ion-icon>
-              <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Medium" name="heart-half"></ion-icon>
-              <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating == ANSWER_RATING_ENUM.Bad" name="heart-dislike"></ion-icon>
+              <ion-icon class="resultIcon" color="success" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Good" name="heart"></ion-icon>
+              <ion-icon class="resultIcon" color="warning" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Medium" name="heart-half"></ion-icon>
+              <ion-icon class="resultIcon" color="danger" *ngIf="resultGroup.GroupRating === AnswerRatingEnum.Bad" name="heart-dislike"></ion-icon>
             </ion-col>
             <ion-col size="10">
               <ng-container *ngFor="let result of resultGroup.Results">

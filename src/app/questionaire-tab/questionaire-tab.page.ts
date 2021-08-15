@@ -32,12 +32,15 @@ import { ResultService } from '../shared/result.service';
 })
 export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
+  @ViewChild(IonSlides) slider: IonSlides;
+
   questionGroups: Array<QuestionGroup>;
   currentGroup = 0;
 
   animationStateBackButton = "";
   animationStateNextButton = "";
   animationStateResultButton = "";
+
 
   private unsubscribe$ = new Subject<void>();
 
@@ -49,7 +52,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
     this.questionGroups = this.questionSourceService.QuestionGroups;
   }
 
-  @ViewChild(IonSlides) slider: IonSlides;
 
   ngOnInit(): void {
     this.resultService.ResultSavedObservable.pipe(

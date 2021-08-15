@@ -35,7 +35,22 @@
             "prefix": "app",
             "style": "camelCase"
           }
-        ]
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "classProperty",
+            "modifiers": [
+              "public"
+            ],
+            "format": [
+              "PascalCase",
+              "camelCase"
+            ]
+          }
+        ],
+        "@typescript-eslint/quotes": "off",
+        "max-len": "off"
       }
     },
     {

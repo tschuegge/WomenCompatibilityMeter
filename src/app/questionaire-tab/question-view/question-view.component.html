@@ -1,7 +1,7 @@
 <p>{{question.Text}}</p>
 <ng-container [ngSwitch]="question.QuestionType">
 
-  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.PercentSlider">
+  <ng-container *ngSwitchCase="QuestionTypeEnum.PercentSlider">
   <ion-range [max]="100" [min]="0" [pin]="true" [snaps]="true" [step]="10" [ticks]="true" [(ngModel)]="value" (ionChange)="onValueChange()" mode="ios">
     <ion-label slot="start">0%</ion-label>
     <ion-label slot="end">100%</ion-label>
@@ -11,7 +11,7 @@
   </ion-range>
   </ng-container>
   
-  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.RadioGroup">
+  <ng-container *ngSwitchCase="QuestionTypeEnum.RadioGroup">
     <ion-list mode="md">
       <ion-radio-group [(ngModel)]="value" (ionChange)="onValueChange()">
         <ion-item *ngFor="let answer of question.Answers">
@@ -22,7 +22,7 @@
     </ion-list>
   </ng-container>
 
-  <ng-container *ngSwitchCase="QUESTION_TYPE_ENUM.Checkbox">
+  <ng-container *ngSwitchCase="QuestionTypeEnum.Checkbox">
     <ion-list mode="md">
       <ion-item *ngFor="let option of question.CheckboxOptions; index as index">
         <ion-label>{{option}}</ion-label>

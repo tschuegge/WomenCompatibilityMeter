@@ -1,4 +1,4 @@
-import { AnswerRatingEnum } from "./answer-rating-enum"
+import { AnswerRatingEnum } from "./answer-rating-enum";
 
 export interface TotalRating {
   currentPoints: number;

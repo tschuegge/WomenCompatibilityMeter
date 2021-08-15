@@ -11,7 +11,8 @@ import { ResultService } from 'src/app/shared/result.service';
 export class QuestionViewComponent implements OnInit {
 
   @Input() question: Question;
-  QUESTION_TYPE_ENUM = QuestionTypeEnum;
+
+  QuestionTypeEnum = QuestionTypeEnum;
 
   value: number | string | Array<string>;
 

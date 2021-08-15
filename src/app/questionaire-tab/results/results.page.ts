@@ -12,7 +12,7 @@ import { ResultService } from 'src/app/shared/result.service';
 })
 export class ResultsPage implements OnInit {
 
-  ANSWER_RATING_ENUM = AnswerRatingEnum;
+  AnswerRatingEnum = AnswerRatingEnum;
 
   constructor(
     private resultService: ResultService,

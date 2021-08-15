@@ -17,8 +17,8 @@ import { ResultService } from 'src/app/shared/result.service';
 export class DetailsPage implements OnInit {
 
   resultGroup: ResultGroup | undefined;
-  ANSWER_RATING_ENUM = AnswerRatingEnum;
-  QUESTION_TYPE_ENUM = QuestionTypeEnum;
+  AnswerRatingEnum = AnswerRatingEnum;
+  QuestionTypeEnum = QuestionTypeEnum;
 
   private unsubscribe$ = new Subject<void>();
 
@@ -34,7 +34,8 @@ export class DetailsPage implements OnInit {
       this.navController.navigateRoot("/");
     }
     this.activatedRoute.params.pipe(takeUntil(this.unsubscribe$)).subscribe(params => {
-      this.resultGroup = this.resultService.ResultGroups[params["groupNo"]];
+      // eslint-disable-next-line @typescript-eslint/dot-notation
+      this.resultGroup = this.resultService.ResultGroups[params['groupNo']];
       if (!this.resultGroup) {
         this.navController.navigateRoot("/");
       }
