@@ -12,7 +12,7 @@ The app is published in german at https://wcm.juergdanuser.ch.
 
 Documentation
 -------------
-Docs are available at: https://tschuegge.github.io/WomenCompatibilityMeter
+Docs are available at https://tschuegge.github.io/WomenCompatibilityMeter
 
 Development
 -----------
