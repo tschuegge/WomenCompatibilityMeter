@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-slides [pager]="true" (ionSlideDidChange)="setCurrentSlide()" [options]="{allowTouchMove:false}">
+  <ion-slides [pager]="true" (ionSlideDidChange)="setControlButtonsAnimationState()" [options]="{allowTouchMove:false}">
     <ion-slide *ngFor="let questionGroup of questionGroups">
       <ion-content class="ion-padding-bottom" [fullscreen]="true">
         <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>

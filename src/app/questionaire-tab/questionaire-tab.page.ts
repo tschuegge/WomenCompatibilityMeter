@@ -35,7 +35,6 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild(IonSlides) slider: IonSlides;
 
   questionGroups: Array<QuestionGroup>;
-  currentGroup = 0;
 
   animationStateBackButton = "";
   animationStateNextButton = "";
@@ -56,7 +55,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.resultService.ResultSavedObservable.pipe(
       takeUntil(this.unsubscribe$)
-    ).subscribe(() => this.setCurrentControlButtons());
+    ).subscribe(() => this.setControlButtonsAnimationState());
   }
 
   ngOnDestroy(): void {
@@ -65,15 +64,10 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.setCurrentSlide();
+    this.setControlButtonsAnimationState();
   }
 
-  async setCurrentSlide(): Promise<void> {
-    this.currentGroup = await this.slider.getActiveIndex();
-    this.setCurrentControlButtons();
-  }
-
-  async setCurrentControlButtons(): Promise<void> {
+  async setControlButtonsAnimationState(): Promise<void> {
     if (!!this.slider) {
       if (await this.slider.isBeginning()) {
         this.animationStateBackButton = "hidden";
@@ -92,7 +86,8 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   }
 
   async gotoNextSlide(): Promise<void> {
-    if (this.resultService.isGroupCompleted(this.currentGroup)) {
+    const currentGroup = await this.slider.getActiveIndex();
+    if (this.resultService.isGroupCompleted(currentGroup)) {
       this.slider.slideNext();
     } else {
       const toast = await this.toastController.create({
