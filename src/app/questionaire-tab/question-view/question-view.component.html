@@ -25,7 +25,7 @@
   <ng-container *ngSwitchCase="QuestionTypeEnum.Checkbox">
     <ion-list mode="md">
       <ion-item *ngFor="let option of question.CheckboxOptions; index as index">
-        <ion-label>{{option}}</ion-label>
+        <ion-label class="ion-text-wrap">{{option}}</ion-label>
         <ion-checkbox slot="start" [(ngModel)]="checkedCheckboxes[index]" (ionChange)="onValueChange()"></ion-checkbox>
       </ion-item>
     </ion-list>
