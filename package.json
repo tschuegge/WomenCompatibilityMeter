@@ -1,6 +1,6 @@
 {
   "name": "women-compatibility-meter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jürg Danuser",
   "scripts": {
     "start": "ng serve",
