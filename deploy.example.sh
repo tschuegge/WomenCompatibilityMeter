@@ -1,12 +1,16 @@
 #!/bin/bash
 
-### EXAMPLE ###
+### Settings Example ###
+remoteUsername='remoteUser'
+remoteHost='remote.host.example'
+remotePath='/remote/path/'
+sshPort='22'
 
-# Remove finder trash on macOS
+# Build project
+ng build --configuration=production
+
+# Remove macOS Finder Trash
 find ./ -name '.DS_Store' -type f -delete
 
-# delete previous release
-ssh username@host.com "rm -rf ./deploypath/*"
-
-# deploy release
-scp -r ./www/* username@host.com:/deploypath/
+# Upload source files to remote host
+rsync --rsh "ssh -p $sshPort" --archive --compress --progress --delete ./www/ $remoteUsername@$remoteHost:$remotePath/
