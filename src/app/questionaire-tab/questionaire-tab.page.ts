@@ -1,11 +1,15 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, ToastController } from '@ionic/angular';
+import { IonicSlides, ToastController } from '@ionic/angular';
+import SwiperCore, { Pagination } from "swiper";
+import { SwiperComponent } from 'swiper/angular';
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
 import { QuestionGroup } from '../shared/model/question-group';
 import { QuestionSourceService } from '../shared/question-source.service';
 import { ResultService } from '../shared/result.service';
+
+SwiperCore.use([Pagination, IonicSlides]);
 
 /**
  * Parent page for tab 'Fragebogen', it holds the control buttons an the question view
@@ -38,7 +42,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   /**
    * Instance of slide control
    */
-  @ViewChild(IonSlides) slider: IonSlides;
+  @ViewChild(SwiperComponent) slider: SwiperComponent;
 
   /**
    * Questionaire for use in template
@@ -99,11 +103,11 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    */
   async setControlButtonsAnimationState(): Promise<void> {
     if (!!this.slider) {
-      if (await this.slider.isBeginning()) {
+      if (await this.slider.swiperRef.isBeginning) {
         this.animationStateBackButton = "hidden";
         this.animationStateNextButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
         this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
-      } else if (await this.slider.isEnd()) {
+      } else if (await this.slider.swiperRef.isEnd) {
         this.animationStateBackButton = (this.resultService.areAllGroupsCompleted()) ? "visible-25" : "visible-100";
         this.animationStateNextButton = "hidden";
         this.animationStateResultButton = (this.resultService.areAllGroupsCompleted()) ? "visible-75" : "hidden";
@@ -119,9 +123,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    * Go to next slide
    */
   async gotoNextSlide(): Promise<void> {
-    const currentGroup = await this.slider.getActiveIndex();
+    const currentGroup = this.slider.swiperRef.activeIndex;
     if (this.resultService.isGroupCompleted(currentGroup)) {
-      this.slider.slideNext();
+      this.slider.swiperRef.slideNext();
     } else {
       const toast = await this.toastController.create({
         message: "Es wurden nicht alle Fragen beantwortet...",
@@ -137,7 +141,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    * Go to previous slide
    */
   gotoPrevSlide(): void {
-    this.slider.slidePrev();
+    this.slider.swiperRef.slidePrev();
   }
 
 }

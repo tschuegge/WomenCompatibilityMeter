@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { SwiperModule } from "swiper/angular";
+
 import { QuestionaireTabPageRoutingModule } from './questionaire-tab-routing.module';
 
 import { QuestionaireTabPage } from './questionaire-tab.page';
@@ -15,6 +17,7 @@ import { QuestionViewComponent } from './question-view/question-view.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    SwiperModule,
     QuestionaireTabPageRoutingModule
   ],
   declarations: [

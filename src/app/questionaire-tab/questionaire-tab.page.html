@@ -6,13 +6,13 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-slides [pager]="true" (ionSlideDidChange)="setControlButtonsAnimationState()" [options]="{allowTouchMove:false}">
-    <ion-slide *ngFor="let questionGroup of questionGroups">
+  <swiper [pagination]="true" (slideChange)="setControlButtonsAnimationState()" [config]="{allowTouchMove:false}">
+    <ng-template swiperSlide *ngFor="let questionGroup of questionGroups">
       <ion-content class="ion-padding-bottom" [fullscreen]="true">
         <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>
       </ion-content>
-    </ion-slide>
-  </ion-slides>
+    </ng-template>
+    </swiper>
 
   <div class="controlButtons">
     <ion-button color="secondary" (click)="gotoPrevSlide()" [@ControlButtonSize]="animationStateBackButton">
