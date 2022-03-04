@@ -1,3 +1,8 @@
+1.0.3 (2022-03-04)
+------------------
+- Update Angular and Ionic
+- Migrate to SwiperJS because depreciation of ion-slide
+
 1.0.2 (2021-10-01)
 ------------------
 - Update dependencies like Angular and Ionic on latest stable release
