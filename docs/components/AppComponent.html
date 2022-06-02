@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -81,7 +81,7 @@
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -152,17 +152,17 @@ export class AppComponent { }
         <pre class="line-numbers"><code class="language-html">&lt;ion-app&gt;
   &lt;ion-tabs&gt;
     &lt;ion-tab-bar slot&#x3D;&quot;bottom&quot; color&#x3D;&quot;light&quot;&gt;
-  
-      &lt;ion-tab-button tab&#x3D;&quot;questionaire-tab&quot;&gt;
+
+      &lt;ion-tab-button tab&#x3D;&quot;questionaire&quot;&gt;
         &lt;ion-icon name&#x3D;&quot;speedometer-outline&quot;&gt;&lt;/ion-icon&gt;
         &lt;ion-label&gt;Fragebogen&lt;/ion-label&gt;
       &lt;/ion-tab-button&gt;
-  
-      &lt;ion-tab-button tab&#x3D;&quot;info-tab&quot;&gt;
+
+      &lt;ion-tab-button tab&#x3D;&quot;info&quot;&gt;
         &lt;ion-icon name&#x3D;&quot;information-circle-outline&quot;&gt;&lt;/ion-icon&gt;
         &lt;ion-label&gt;Info&lt;/ion-label&gt;
       &lt;/ion-tab-button&gt;
-  
+
     &lt;/ion-tab-bar&gt;
   &lt;/ion-tabs&gt;
 &lt;/ion-app&gt;
@@ -203,7 +203,7 @@ export class AppComponent { }
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-app>  <ion-tabs>    <ion-tab-bar slot="bottom" color="light">        <ion-tab-button tab="questionaire-tab">        <ion-icon name="speedometer-outline"></ion-icon>        <ion-label>Fragebogen</ion-label>      </ion-tab-button>        <ion-tab-button tab="info-tab">        <ion-icon name="information-circle-outline"></ion-icon>        <ion-label>Info</ion-label>      </ion-tab-button>      </ion-tab-bar>  </ion-tabs></ion-app></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-app>  <ion-tabs>    <ion-tab-bar slot="bottom" color="light">      <ion-tab-button tab="questionaire">        <ion-icon name="speedometer-outline"></ion-icon>        <ion-label>Fragebogen</ion-label>      </ion-tab-button>      <ion-tab-button tab="info">        <ion-icon name="information-circle-outline"></ion-icon>        <ion-label>Info</ion-label>      </ion-tab-button>    </ion-tab-bar>  </ion-tabs></ion-app></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailsPage', 'selector': 'app-details'},{'name': 'InfoTabPage', 'selector': 'app-info-tab'},{'name': 'QuestionaireTabPage', 'selector': 'app-questionaire-tab'},{'name': 'QuestionGroupViewComponent', 'selector': 'app-question-group-view'},{'name': 'QuestionViewComponent', 'selector': 'app-question-view'},{'name': 'ResultsPage', 'selector': 'app-results'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
@@ -219,14 +219,16 @@ export class AppComponent { }
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -238,6 +240,15 @@ export class AppComponent { }
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
@@ -247,8 +258,8 @@ export class AppComponent { }
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

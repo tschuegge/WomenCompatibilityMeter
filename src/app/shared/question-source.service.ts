@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { QUESTIONS_CONFIG } from 'src/config/questions.config';
+import { Questionaire } from '../../config/questionaire.type';
+import { QUESTIONS_DEVELOPER } from '../../config/questions-developer.config';
+import { QUESTIONS_GENERAL } from '../../config/questions-general.config';
 import { Question } from './model/question';
 import { QuestionGroup } from './model/question-group';
 
@@ -11,13 +13,33 @@ import { QuestionGroup } from './model/question-group';
 })
 export class QuestionSourceService {
 
-  private questionGroupSource: Array<QuestionGroup> = QUESTIONS_CONFIG;
+  private questionGroupSource: Array<QuestionGroup> = QUESTIONS_DEVELOPER;
+  private questionaireSource: Questionaire = "DEVELOPER";
 
   /**
    * All Question Groups with questions
    */
   get QuestionGroups() {
     return this.questionGroupSource;
+  }
+
+  /**
+   * Loaded questionaire
+   */
+  get Questionaire() {
+    return this.questionaireSource;
+  }
+  set Questionaire(value: Questionaire) {
+    switch (value) {
+      case "DEVELOPER":
+        this.questionGroupSource = QUESTIONS_DEVELOPER;
+        break;
+      case "GENERAL":
+        this.questionGroupSource = QUESTIONS_GENERAL;
+        break;
+      default:
+        throw new Error("Invalid questionaire requested!");
+    }
   }
 
   /**

@@ -1,3 +1,8 @@
+1.1.0 (2022-06-02)
+==================
+- Integration of multiple questionaires
+- General questionaire
+
 1.0.3 (2022-03-04)
 ------------------
 - Update Angular and Ionic

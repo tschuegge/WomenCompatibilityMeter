@@ -11,6 +11,7 @@ import { QuestionSourceService } from './shared/question-source.service';
 import { ResultService } from './shared/result.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { QuestionaireGuard } from './shared/questionaire.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,8 +30,9 @@ import { environment } from '../environments/environment';
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     QuestionSourceService,
-    ResultService
+    ResultService,
+    QuestionaireGuard
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

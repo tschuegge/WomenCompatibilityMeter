@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -30,6 +30,7 @@
                <!-- START CONTENT -->
                <div class="content injectable">
                    <div class="content-data">
+
 
 
 
@@ -109,6 +110,9 @@
                                 <li>
                                     <a href="#QuestionGroups" >QuestionGroups</a>
                                 </li>
+                                <li>
+                                    <a href="#Questionaire" >Questionaire</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -142,8 +146,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/shared/question-source.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/shared/question-source.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -155,6 +159,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -218,8 +223,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/shared/question-source.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/shared/question-source.service.ts:65</a></div>
                 </td>
             </tr>
 
@@ -231,6 +236,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -296,7 +302,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/question-source.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/question-source.service.ts:22</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -309,13 +315,91 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="Questionaire"></a>
+                        <span class="name"><b>Questionaire</b><a href="#Questionaire"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>Questionaire()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/question-source.service.ts:29</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Loaded questionaire</p>
+</div>
+
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>Questionaire(value: <a href="../interfaces/Question.html" target="_self">Questionaire</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/question-source.service.ts:32</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>value</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/Question.html" target="_self" >Questionaire</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
 </section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { QUESTIONS_CONFIG } from &#x27;src/config/questions.config&#x27;;
+import { Questionaire } from &#x27;../../config/questionaire.type&#x27;;
+import { QUESTIONS_DEVELOPER } from &#x27;../../config/questions-developer.config&#x27;;
+import { QUESTIONS_GENERAL } from &#x27;../../config/questions-general.config&#x27;;
 import { Question } from &#x27;./model/question&#x27;;
 import { QuestionGroup } from &#x27;./model/question-group&#x27;;
 
@@ -327,13 +411,33 @@ import { QuestionGroup } from &#x27;./model/question-group&#x27;;
 })
 export class QuestionSourceService {
 
-  private questionGroupSource: Array&lt;QuestionGroup&gt; &#x3D; QUESTIONS_CONFIG;
+  private questionGroupSource: Array&lt;QuestionGroup&gt; &#x3D; QUESTIONS_DEVELOPER;
+  private questionaireSource: Questionaire &#x3D; &quot;DEVELOPER&quot;;
 
   /**
    * All Question Groups with questions
    */
   get QuestionGroups() {
     return this.questionGroupSource;
+  }
+
+  /**
+   * Loaded questionaire
+   */
+  get Questionaire() {
+    return this.questionaireSource;
+  }
+  set Questionaire(value: Questionaire) {
+    switch (value) {
+      case &quot;DEVELOPER&quot;:
+        this.questionGroupSource &#x3D; QUESTIONS_DEVELOPER;
+        break;
+      case &quot;GENERAL&quot;:
+        this.questionGroupSource &#x3D; QUESTIONS_GENERAL;
+        break;
+      default:
+        throw new Error(&quot;Invalid questionaire requested!&quot;);
+    }
   }
 
   /**
@@ -374,14 +478,15 @@ export class QuestionSourceService {
 
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -393,6 +498,15 @@ export class QuestionSourceService {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
@@ -402,8 +516,8 @@ export class QuestionSourceService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

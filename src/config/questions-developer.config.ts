@@ -4,9 +4,9 @@ import { EvaluationTypeEnum } from 'src/app/shared/model/evaluation-type-enum';
 import { AnswerRatingEnum } from 'src/app/shared/model/answer-rating-enum';
 
 /**
- * Questionaire in german
+ * Questionaire for developer in german
  */
-export const QUESTIONS_CONFIG: Array<QuestionGroup> = [
+export const QUESTIONS_DEVELOPER: Array<QuestionGroup> = [
   {
     GroupName: 'Teilzeit',
     Description: 'Das Anbieten von Teilzeitpensen ist ein wichtiger Faktor, um ein Unternehmen für Frauen attraktiv zu gestalten.',

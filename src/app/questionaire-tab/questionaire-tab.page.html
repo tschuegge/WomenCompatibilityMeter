@@ -1,18 +1,24 @@
 <ion-header [translucent]="false">
   <ion-toolbar color="primary">
     <ion-title>Fragebogen</ion-title>
+    <ion-buttons slot="end">
+      <ion-select interface="alert" interfaceOptions="" [(ngModel)]="questionaire" (ionChange)="changeQuestionaire(questionaire)">
+        <ion-select-option value="GENERAL">Generell</ion-select-option>
+        <ion-select-option value="DEVELOPER">Softwareentwicklung</ion-select-option>
+      </ion-select>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <swiper [pagination]="true" (slideChange)="setControlButtonsAnimationState()" [config]="{allowTouchMove:false}">
+  <swiper (slideChange)="setControlButtonsAnimationState()" [config]="{allowTouchMove:false}">
     <ng-template swiperSlide *ngFor="let questionGroup of questionGroups">
       <ion-content class="ion-padding-bottom" [fullscreen]="true">
         <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>
       </ion-content>
     </ng-template>
-    </swiper>
+  </swiper>
 
   <div class="controlButtons">
     <ion-button color="secondary" (click)="gotoPrevSlide()" [@ControlButtonSize]="animationStateBackButton">
@@ -23,7 +29,7 @@
       <ion-icon name="arrow-forward" slot="start"></ion-icon>
       Weiter
     </ion-button>
-    <ion-button color="success" [routerLink]="['results']" routerDirection="forward" routerLinkActive="router-link-active" [@ControlButtonSize]="animationStateResultButton">
+    <ion-button color="success" [routerLink]="['..', 'results']" routerDirection="forward" routerLinkActive="router-link-active" [@ControlButtonSize]="animationStateResultButton">
       <ion-icon name="golf-outline" slot="start"></ion-icon>
       Auswertung
     </ion-button>

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IonicSlides, ToastController } from '@ionic/angular';
+import { IonicSlides, NavController, ToastController } from '@ionic/angular';
 import SwiperCore, { Pagination } from "swiper";
 import { SwiperComponent } from 'swiper/angular';
 import { animate, state, style, transition, trigger } from "@angular/animations";
@@ -8,6 +8,8 @@ import { takeUntil } from "rxjs/operators";
 import { QuestionGroup } from '../shared/model/question-group';
 import { QuestionSourceService } from '../shared/question-source.service';
 import { ResultService } from '../shared/result.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Questionaire } from '../../config/questionaire.type';
 
 SwiperCore.use([Pagination, IonicSlides]);
 
@@ -64,14 +66,32 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    */
   animationStateResultButton = "";
 
+  /**
+   * Loaded questionaire
+   */
+  questionaire: Questionaire = "DEVELOPER";
+
   private unsubscribe$ = new Subject<void>();
 
   constructor(
     private questionSourceService: QuestionSourceService,
     private resultService: ResultService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private navCtrl: NavController
   ) {
-    this.questionGroups = this.questionSourceService.QuestionGroups;
+    this.activatedRoute.data.pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe(data => {
+      this.questionaire = data['questionaire'];
+      this.questionSourceService.Questionaire = this.questionaire;
+      this.resultService.updateQuestionaire();
+      this.questionGroups = this.questionSourceService.QuestionGroups;
+      setTimeout(() => {
+        this.setControlButtonsAnimationState();
+      }, 200);
+    });
   }
 
   /**
@@ -142,6 +162,20 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    */
   gotoPrevSlide(): void {
     this.slider.swiperRef.slidePrev();
+  }
+
+  /**
+   * Change questionaire
+   */
+  changeQuestionaire(questionaire: Questionaire): void {
+    this.navCtrl.setDirection("root");
+    switch (questionaire) {
+      case "GENERAL":
+        this.router.navigate(["..", "gen"], { relativeTo: this.activatedRoute });
+        break;
+      case "DEVELOPER":
+        this.router.navigate(["..", "dev"], { relativeTo: this.activatedRoute });
+    }
   }
 
 }

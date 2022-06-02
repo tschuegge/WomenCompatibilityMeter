@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -44,7 +44,9 @@
 
 
 
-                   
+
+
+
 
 <ol class="breadcrumb">
   <li>Miscellaneous</li>
@@ -59,7 +61,10 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#QUESTIONS_CONFIG" title="src/config/questions.config.ts" ><b>QUESTIONS_CONFIG</b>&nbsp;&nbsp;&nbsp;(src/.../questions.config.ts)</a>
+                            <a href="#QUESTIONS_DEVELOPER" title="src/config/questions-developer.config.ts" ><b>QUESTIONS_DEVELOPER</b>&nbsp;&nbsp;&nbsp;(src/.../questions-developer.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#QUESTIONS_GENERAL" title="src/config/questions-general.config.ts" ><b>QUESTIONS_GENERAL</b>&nbsp;&nbsp;&nbsp;(src/.../questions-general.config.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -68,16 +73,16 @@
     </table>
 </section>
 
-    <h3>src/config/questions.config.ts</h3>
+    <h3>src/config/questions-developer.config.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="QUESTIONS_CONFIG"></a>
+                    <a name="QUESTIONS_DEVELOPER"></a>
                     <span class="name">
-                        <span ><b>QUESTIONS_CONFIG</b></span>
-                        <a href="#QUESTIONS_CONFIG"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>QUESTIONS_DEVELOPER</b></span>
+                        <a href="#QUESTIONS_DEVELOPER"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -314,7 +319,218 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Questionaire in german</p>
+                    <div class="io-description"><p>Questionaire for developer in german</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/config/questions-general.config.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="QUESTIONS_GENERAL"></a>
+                    <span class="name">
+                        <span ><b>QUESTIONS_GENERAL</b></span>
+                        <a href="#QUESTIONS_GENERAL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;QuestionGroup&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    GroupName: &#x27;Teilzeit&#x27;,
+    Description: &#x27;Das Anbieten von Teilzeitpensen ist ein wichtiger Faktor, um ein Unternehmen für Frauen attraktiv zu gestalten.&#x27;,
+    Questions: [
+      {
+        Text: &#x27;Zu welchem Arbeitspensum in Prozent müssen Mitarbeitende mindestens angestellt sein?&#x27;,
+        QuestionType: QuestionTypeEnum.PercentSlider,
+        Answers: [
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Das Ermöglichen von Teilzeit hilft Frauen (insbesondere Müttern), einer Erwerbstätigkeit nachzugehen.&#x27; },
+          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Tiefere Teilzeitpensen helfen Frauen (insbesondere Müttern), einer Erwerbstätigkeit nachzugehen.&#x27; },
+          { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.EqualOrLess
+      },
+      {
+        Text: &#x27;Eine Abteilungsleiterin möchte nach dem Mutterschaftsurlaub wieder in ihre Führungsposition zurückkehren. Wie gross muss ihr Arbeitspensum in Prozent mindestens sein?&#x27;,
+        QuestionType: QuestionTypeEnum.PercentSlider,
+        Answers: [
+          { Answer: 100, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Für Mütter ist es oft nicht umsetzbar, in den ersten Jahren der Mutterschaft, in eine Vollzeitanstellung zurückzukehren. Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, Teilzeit auch bei Führungspositionen anzubieten.&#x27; },
+          { Answer: 80, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Durch Jobsharing oder andere Anstellungsformen ist es häufig möglich, tiefere Teilzeitpensen auch bei Führungspositionen anzubieten.&#x27; },
+          { Answer: 60, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.EqualOrLess
+      }
+    ]
+  },
+  {
+    GroupName: &#x27;Stellenausschreibung&#x27;,
+    Description: &#x27;Genderneutrale Stellenausschreibungen wirken auf eine grössere Gruppe von Menschen interessant und schrecken besonders Frauen weniger ab.&#x27;,
+    // Source: https://www.fho.ch/fileadmin/pdf/service/fho_gender_leitfaden_stelleninserate.pdf
+    Questions: [
+      {
+        Text: &#x27;Verwendet die Firma in Stellenausschreibungen Phrasen wie: &quot;Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Projektleiter.&quot; oder &quot;Als Sekretärin sind Sie die gute Seele des Teams&quot;?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Geschlechterrollenstereotypen und Klischees (wie z.B. &quot;Wir suchen einen dynamischen, ehrgeizigen und zielorientierten Projektleiter.&quot; oder &quot;Als Sekretärin sind Sie die gute Seele des Teams&quot;) sind zu vermeiden.&#x27; },
+          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Werden attraktive Arbeits- und Anstellungsbedingungen (z.B. moderne Infrastruktur, Nähe zu ÖV-Haltestelle, kooperative Zusammenarbeit mit Vorgesetzten, Lösungen zur Vereinbarkeit von Beruf und Familie, Teilzeit, Homeoffice) aufgezeigt?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;In Zeiten des Fachkräftemangels bewirbt sich eine Fachkraft nicht nur beim Unternehmen, sondern auch das Unternehmen bei der Fachkraft.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Werden die Aufgaben und Anforderungen in Stellenausschreibungen beschreibend formuliert, statt Pflichten und Kompetenzen aufzuzählen?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Beschreibende Inserate verhindern, dass sich bewerbende Personen Punkt für Punkt als erfüllt oder nicht erfüllt klassifizieren. Frauen tendieren dazu, sich nicht zu bewerben, wenn ein Punkt nicht erfüllt ist.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      }
+    ]
+  },
+  {
+    GroupName: &#x27;Frauenanteil in der Softwareentwicklung&#x27;,
+    Description: &#x27;Frauen sorgen in Teams für mehr Diversität und einen vielfältigeren Blick auf das Produkt/die Dienstleistung/etc..&#x27;,
+    Questions: [
+      {
+        Text: &#x27;Wie hoch ist der Frauenanteil in der Abteilung/Firma?&#x27;,
+        QuestionType: QuestionTypeEnum.PercentSlider,
+        Answers: [
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Die erste Frau/Mitarbeiterin zu gewinnen ist eher schwierig, da Frauen tendenziell lieber in Teams arbeiten, in denen es bereits Frauen gibt.&#x27; },
+          { Answer: 10, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen arbeiten tendenziell lieber in Teams, in denen es bereits Frauen gibt.&#x27; },
+          { Answer: 30, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.EqualOrMore
+      },
+      {
+        Text: &#x27;Gibt es Teams, in denen nur eine Frau vertreten ist?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Ja&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen arbeiten tendenziell lieber in gemischten Teams.&#x27; },
+          { Answer: &#x27;Nein&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      }
+    ]
+  },
+  {
+    GroupName: &#x27;Respekt am Arbeitsplatz&#x27;,
+    Description: &#x27;Allgemein ist anzunehmen, dass Respekt am Arbeitsplatz eine Selbstverständlichkeit ist. Frauen werden besonders abgeschreckt und akzeptieren dies nicht mehr, falls sie in Firmen als minderwertig angesehen werden.&#x27;,
+    Questions: [
+      {
+        Text: &#x27;Eine Mitarbeiterin bitte den männlichen Kollegen um Hilfe bei einer Problemstellung im Betrieb. Als sie nach zweimaligem Erklären die Lösung noch nicht verstanden hat, meint der Kollege, dass es möglicherweise an ihren &quot;langen Haaren&quot; liegen würde. Wie wird diese Situation in der Firma beurteilt?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Das war nur ein dummer Spruch, keine weitere Reaktion notwendig.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Respektvoller Umgang gegenüber allen Mitarbeitenden ist zwingend notwendig. Unangebrachte Sprüche über körperliche Merkmale oder das Geschlecht schrecken besonders Frauen ab und wirken diskriminierend.&#x27; },
+          { Answer: &#x27;Der Vorgesetzte würde reagieren und den Systemadministrator darauf hinweisen, dass solche Sprüche unangebracht sind.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Dass fehlender Respekt von Vorgesetzten nicht akzeptiert wird, ist ein erster Schritt. Das Ziel ist, dass Respekt Teil der Kultur der Firma wird und von allen Mitarbeitenden getragen und gelebt wird.&#x27; },
+          { Answer: &#x27;Das Team toleriert ein solches Verhalten nicht.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Eine Mitarbeiterin verdient 10% weniger als ein männlicher Kollege bei gleicher Qualifikation. Wie geht die Firma damit um?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Dies kommt in der Firma nicht vor, da ein regelmässiger Lohnvergleich durchgeführt wird.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;Auf Nachfrage der Mitarbeiterin wird der Lohn angepasst.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Lohnungleichheiten müssen durch regelmässige Überprüfung beseitigt werden und nicht erst, wenn Mitarbeitende die Vorgesetzten darauf aufmerksam machen. Frauen äussern sich tendenziell weniger mit der Forderung für eine Lohnangleichung beim Vorgesetzten.&#x27; },
+          { Answer: &#x27;Der Lohnunterschied lässt sich aufgrund dessen erklären, dass Frauen in der Regel weniger technisch versiert sind und aus historischen Gründen Frauen weniger verdienen wie Männer.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Um attraktiv für Frauen zu sein, ist der Grundsatz &quot;gleicher Lohn für gleiche Arbeit&quot; unerlässlich.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Eine neu eingestellte Mitarbeiterin kommuniziert sachlich und direkt. Sie ist selbstbewusst und durchsetzungsstark. Wie würden die anderen Mitarbeitenden reagieren?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Sie würde als emanzipierte Feministin wahrgenommen.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Eigenschaften wie die sachliche und direkte Kommunikation oder Selbstbewusstsein und Durchsetzungsstärke dürfen bei Frauen nicht anders bewertet werden, wie bei Männern.&#x27; },
+          { Answer: &#x27;Sie würde nicht speziell wahrgenommen werden.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;Sie würde besonders für ihre Professionalität gelobt werden.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Frauen mögen es häufig nicht, wenn sie nur wegen des Frauseins auf ein Podest gehoben werden.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Die Firma stellt die erste Frau in einem Team ein. Wie geht die Firma mit dieser Mitarbeiterin um?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;Die Firma ist stolz auf die Frau und nützt die Situation, um eine Image-Kampagne zu starten, bei der auf die Diversität und besondere Frauenfreundlichkeit im Team eingegangen wird.&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Frauen mögen es häufig nicht, wenn sie auf ein Podest gehoben werden, nur weil sie Frauen sind.&#x27; },
+          { Answer: &#x27;Die Mitarbeiterin wird wie die anderen Mitarbeitenden ins Team integriert und nicht besonders behandelt.&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;Die Firma gibt besonders Acht auf die Mitarbeiterin, damit sie sich wohlfühlt und nicht die Firma wieder verlässt.&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Häufig mögen es Frauen nicht, wenn ein besonderer Wirbel um sie gemacht wird. Viele möchten, dass das Geschlecht möglichst keine Rolle spielt.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      }
+    ]
+  },
+  {
+    GroupName: &#x27;Familienfreundlichkeit&#x27;,
+    Description: &#x27;Die Vereinbarkeit von Beruf und Familie ist für viele Frauen eine wichtige Komponente, warum sie sich für ein Unternehmen entscheiden.&#x27;,
+    Questions: [
+      {
+        Text: &#x27;Was für ein Arbeitszeitmodell bietet das Unternehmen den Mitarbeitenden an (bei mehreren Modellen bitte das flexibelste Modell wählen)?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;flexible Arbeitszeit mit einer Blockzeit&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Flexibilität ist besonders für Mütter in der Regel ein besonders wichtiges Kriterium. Der Verzicht auf eine Blockzeit würde die Flexibilität weiter erhöhen.&#x27; },
+          { Answer: &#x27;flexible Arbeitszeit ohne Blockzeit&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;fixe Arbeitszeiten&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Flexibilität ist besonders für Mütter in der Regel ein besonders wichtiges Kriterium. Das Einführen von flexiblen Arbeitszeiten würde die Flexibilität für alle Mitarbeitenden erhöhen.&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Von wo aus dürfen die Mitarbeitenden arbeiten?&#x27;,
+        QuestionType: QuestionTypeEnum.RadioGroup,
+        Answers: [
+          { Answer: &#x27;nur im Büro&#x27;, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Für Mütter und Väter ist ein flexibler Arbeitsort ein grosser Vorteil. Das Ermöglichen von Homeoffice würde die Attraktivität des Unternehmens für Bewerbenden weiter steigern.&#x27; },
+          { Answer: &#x27;primär im Büro und an wenigen definierten Tagen im Homeoffice&#x27;, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Für Mütter und Väter ist ein flexibler Arbeitsort ein grosser Vorteil. Die Möglichkeit viel aus dem Homeoffice zu arbeiten, würde die Attraktivität des Unternehmens für Bewerbenden weiter steigern.&#x27; },
+          { Answer: &#x27;beliebig viel im Büro und Homeoffice (die Mitarbeitenden sind selbst verantwortlich)&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; },
+          { Answer: &#x27;irgendwo, sofern die Arbeitsqualität nicht leidet&#x27;, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.Equal
+      },
+      {
+        Text: &#x27;Was bietet das Unternehmen den Mitarbeitenden  zusätzlich an, um die Vereinbarkeit von Beruf und Familie zu vereinfachen?&#x27;,
+        QuestionType: QuestionTypeEnum.Checkbox,
+        CheckboxOptions: [
+          &#x27;flexibles Anpassen des Arbeitspensums&#x27;,
+          &#x27;unbezahlte Abwesenheiten&#x27;,
+          &#x27;Mitarbeitende mit Kindern werden bei der Ferienplanung bevorzugt&#x27;,
+          &#x27;zusätzliche Elternzeit bei der Geburt&#x27;,
+          &#x27;anderes&#x27;
+        ],
+        Answers: [
+          { Answer: 0, Rating: AnswerRatingEnum.Bad, Hint: &#x27;Zusätzliche Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigern die Attraktivität des Unternehmens bei den Bewerbenden.&#x27; },
+          { Answer: 1, Rating: AnswerRatingEnum.Medium, Hint: &#x27;Die Einführung von weiteren Massnahmen zur Vereinbarkeit von Beruf und Familie (z.B. flexibles Anpassen des Arbeitspensums, unbezahlte Abwesenheiten, Bevorzugung bei der Ferienplanung oder zusätzliche Elternzeit bei der Geburt) steigert die Attraktivität bei Bewerbenden zusätzlich.&#x27; },
+          { Answer: 2, Rating: AnswerRatingEnum.Good, Hint: &#x27;&#x27; }
+        ],
+        EvaluationType: EvaluationTypeEnum.EqualOrMore
+      }
+    ]
+  }
+]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Questionaire for general in german</p>
 </div>
                 </td>
             </tr>
@@ -327,7 +543,7 @@
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -339,6 +555,15 @@
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
@@ -348,8 +573,8 @@
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

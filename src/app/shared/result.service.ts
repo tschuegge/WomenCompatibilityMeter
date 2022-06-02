@@ -25,13 +25,7 @@ export class ResultService {
   private totalRating: TotalRating = { currentPoints: 0, totalPoints: 0, currentRating: AnswerRatingEnum.Bad };
 
   constructor(private questionSourceService: QuestionSourceService) {
-    this.questionSourceService.QuestionGroups.forEach(group => {
-      this.totalRating.totalPoints += group.Questions.length * AnswerRatingEnum.Good;
-    });
-
-    if (environment.autoFillQuestions) {
-      this.autoFillQuestions();
-    }
+    this.updateQuestionaire();
   }
 
   /**
@@ -53,6 +47,22 @@ export class ResultService {
    */
   get TotalRating() {
     return this.totalRating;
+  }
+
+  /**
+   * Sets a new questionaire
+   */
+  updateQuestionaire() {
+    this.resultGroup = [];
+    this.questionSourceService.QuestionGroups.forEach(group => {
+      this.totalRating.totalPoints += group.Questions.length * AnswerRatingEnum.Good;
+    });
+    this.totalRating.currentPoints = 0;
+    this.totalRating.currentRating = AnswerRatingEnum.Bad;
+
+    if (environment.autoFillQuestions) {
+      this.autoFillQuestions();
+    }
   }
 
   /**

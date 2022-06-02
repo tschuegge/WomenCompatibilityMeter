@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -89,7 +89,7 @@
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -152,6 +152,9 @@
                                 <a href="#animationStateResultButton" >animationStateResultButton</a>
                             </li>
                             <li>
+                                <a href="#questionaire" >questionaire</a>
+                            </li>
+                            <li>
                                 <a href="#questionGroups" >questionGroups</a>
                             </li>
                             <li>
@@ -169,6 +172,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#changeQuestionaire" >changeQuestionaire</a>
+                            </li>
                             <li>
                                     <span class="modifier">Async</span>
                                 <a href="#gotoNextSlide" >gotoNextSlide</a>
@@ -207,12 +213,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(questionSourceService: <a href="../injectables/QuestionSourceService.html" target="_self">QuestionSourceService</a>, resultService: <a href="../injectables/ResultService.html" target="_self">ResultService</a>, toastController: ToastController)</code>
+<code>constructor(questionSourceService: <a href="../injectables/QuestionSourceService.html" target="_self">QuestionSourceService</a>, resultService: <a href="../injectables/ResultService.html" target="_self">ResultService</a>, toastController: ToastController, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, navCtrl: NavController)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -265,6 +271,42 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>activatedRoute</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>navCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>NavController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -287,6 +329,77 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="changeQuestionaire"></a>
+                    <span class="name">
+                        <span ><b>changeQuestionaire</b></span>
+                        <a href="#changeQuestionaire"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeQuestionaire(questionaire: <a href="../interfaces/Question.html" target="_self">Questionaire</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Change questionaire</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>questionaire</td>
+                                    <td>
+                                                <code><a href="../interfaces/Question.html" target="_self" >Questionaire</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="gotoNextSlide"></a>
                     <span class="name">
                         <span class="modifier">Async</span>
@@ -305,8 +418,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="121"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:121</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:145</a></div>
                 </td>
             </tr>
 
@@ -344,8 +457,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="139"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:139</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:163</a></div>
                 </td>
             </tr>
 
@@ -383,8 +496,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="93"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:93</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="117"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:117</a></div>
                 </td>
             </tr>
 
@@ -422,8 +535,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:109</a></div>
                 </td>
             </tr>
 
@@ -461,8 +574,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:100</a></div>
                 </td>
             </tr>
 
@@ -502,8 +615,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="124"
+                            class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:124</a></div>
                 </td>
             </tr>
 
@@ -551,7 +664,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:57</a></div>
                         </td>
                     </tr>
 
@@ -588,7 +701,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:56</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:62</a></div>
                         </td>
                     </tr>
 
@@ -625,13 +738,50 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:67</a></div>
                         </td>
                     </tr>
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>Animation state for result button</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="questionaire"></a>
+                    <span class="name">
+                        <span ><b>questionaire</b></span>
+                        <a href="#questionaire"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Question.html" target="_self" >Questionaire</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;DEVELOPER&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:72</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Loaded questionaire</p>
 </div>
                 </td>
             </tr>
@@ -657,7 +807,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:46</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:52</a></div>
                         </td>
                     </tr>
 
@@ -683,7 +833,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>IonSlides</code>
+                        <i>Type : </i>    <code>SwiperComponent</code>
 
                     </td>
                 </tr>
@@ -692,13 +842,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ViewChild(IonSlides)<br />
+                            @ViewChild(SwiperComponent)<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:41</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/questionaire-tab/questionaire-tab.page.ts:47</a></div>
                         </td>
                     </tr>
 
@@ -718,13 +868,19 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
-import { IonSlides, ToastController } from &#x27;@ionic/angular&#x27;;
+import { IonicSlides, NavController, ToastController } from &#x27;@ionic/angular&#x27;;
+import SwiperCore, { Pagination } from &quot;swiper&quot;;
+import { SwiperComponent } from &#x27;swiper/angular&#x27;;
 import { animate, state, style, transition, trigger } from &quot;@angular/animations&quot;;
 import { Subject } from &#x27;rxjs&#x27;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 import { QuestionGroup } from &#x27;../shared/model/question-group&#x27;;
 import { QuestionSourceService } from &#x27;../shared/question-source.service&#x27;;
 import { ResultService } from &#x27;../shared/result.service&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Questionaire } from &#x27;../../config/questionaire.type&#x27;;
+
+SwiperCore.use([Pagination, IonicSlides]);
 
 /**
  * Parent page for tab &#x27;Fragebogen&#x27;, it holds the control buttons an the question view
@@ -757,7 +913,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
   /**
    * Instance of slide control
    */
-  @ViewChild(IonSlides) slider: IonSlides;
+  @ViewChild(SwiperComponent) slider: SwiperComponent;
 
   /**
    * Questionaire for use in template
@@ -779,14 +935,32 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    */
   animationStateResultButton &#x3D; &quot;&quot;;
 
+  /**
+   * Loaded questionaire
+   */
+  questionaire: Questionaire &#x3D; &quot;DEVELOPER&quot;;
+
   private unsubscribe$ &#x3D; new Subject&lt;void&gt;();
 
   constructor(
     private questionSourceService: QuestionSourceService,
     private resultService: ResultService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private navCtrl: NavController
   ) {
-    this.questionGroups &#x3D; this.questionSourceService.QuestionGroups;
+    this.activatedRoute.data.pipe(
+      takeUntil(this.unsubscribe$)
+    ).subscribe(data &#x3D;&gt; {
+      this.questionaire &#x3D; data[&#x27;questionaire&#x27;];
+      this.questionSourceService.Questionaire &#x3D; this.questionaire;
+      this.resultService.updateQuestionaire();
+      this.questionGroups &#x3D; this.questionSourceService.QuestionGroups;
+      setTimeout(() &#x3D;&gt; {
+        this.setControlButtonsAnimationState();
+      }, 200);
+    });
   }
 
   /**
@@ -818,11 +992,11 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    */
   async setControlButtonsAnimationState(): Promise&lt;void&gt; {
     if (!!this.slider) {
-      if (await this.slider.isBeginning()) {
+      if (await this.slider.swiperRef.isBeginning) {
         this.animationStateBackButton &#x3D; &quot;hidden&quot;;
         this.animationStateNextButton &#x3D; (this.resultService.areAllGroupsCompleted()) ? &quot;visible-25&quot; : &quot;visible-100&quot;;
         this.animationStateResultButton &#x3D; (this.resultService.areAllGroupsCompleted()) ? &quot;visible-75&quot; : &quot;hidden&quot;;
-      } else if (await this.slider.isEnd()) {
+      } else if (await this.slider.swiperRef.isEnd) {
         this.animationStateBackButton &#x3D; (this.resultService.areAllGroupsCompleted()) ? &quot;visible-25&quot; : &quot;visible-100&quot;;
         this.animationStateNextButton &#x3D; &quot;hidden&quot;;
         this.animationStateResultButton &#x3D; (this.resultService.areAllGroupsCompleted()) ? &quot;visible-75&quot; : &quot;hidden&quot;;
@@ -838,9 +1012,9 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    * Go to next slide
    */
   async gotoNextSlide(): Promise&lt;void&gt; {
-    const currentGroup &#x3D; await this.slider.getActiveIndex();
+    const currentGroup &#x3D; this.slider.swiperRef.activeIndex;
     if (this.resultService.isGroupCompleted(currentGroup)) {
-      this.slider.slideNext();
+      this.slider.swiperRef.slideNext();
     } else {
       const toast &#x3D; await this.toastController.create({
         message: &quot;Es wurden nicht alle Fragen beantwortet...&quot;,
@@ -856,7 +1030,21 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
    * Go to previous slide
    */
   gotoPrevSlide(): void {
-    this.slider.slidePrev();
+    this.slider.swiperRef.slidePrev();
+  }
+
+  /**
+   * Change questionaire
+   */
+  changeQuestionaire(questionaire: Questionaire): void {
+    this.navCtrl.setDirection(&quot;root&quot;);
+    switch (questionaire) {
+      case &quot;GENERAL&quot;:
+        this.router.navigate([&quot;..&quot;, &quot;gen&quot;], { relativeTo: this.activatedRoute });
+        break;
+      case &quot;DEVELOPER&quot;:
+        this.router.navigate([&quot;..&quot;, &quot;dev&quot;], { relativeTo: this.activatedRoute });
+    }
   }
 
 }
@@ -867,18 +1055,24 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
         <pre class="line-numbers"><code class="language-html">&lt;ion-header [translucent]&#x3D;&quot;false&quot;&gt;
   &lt;ion-toolbar color&#x3D;&quot;primary&quot;&gt;
     &lt;ion-title&gt;Fragebogen&lt;/ion-title&gt;
+    &lt;ion-buttons slot&#x3D;&quot;end&quot;&gt;
+      &lt;ion-select interface&#x3D;&quot;alert&quot; interfaceOptions&#x3D;&quot;&quot; [(ngModel)]&#x3D;&quot;questionaire&quot; (ionChange)&#x3D;&quot;changeQuestionaire(questionaire)&quot;&gt;
+        &lt;ion-select-option value&#x3D;&quot;GENERAL&quot;&gt;Generell&lt;/ion-select-option&gt;
+        &lt;ion-select-option value&#x3D;&quot;DEVELOPER&quot;&gt;Softwareentwicklung&lt;/ion-select-option&gt;
+      &lt;/ion-select&gt;
+    &lt;/ion-buttons&gt;
   &lt;/ion-toolbar&gt;
 &lt;/ion-header&gt;
 
 &lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
 
-  &lt;ion-slides [pager]&#x3D;&quot;true&quot; (ionSlideDidChange)&#x3D;&quot;setControlButtonsAnimationState()&quot; [options]&#x3D;&quot;{allowTouchMove:false}&quot;&gt;
-    &lt;ion-slide *ngFor&#x3D;&quot;let questionGroup of questionGroups&quot;&gt;
+  &lt;swiper (slideChange)&#x3D;&quot;setControlButtonsAnimationState()&quot; [config]&#x3D;&quot;{allowTouchMove:false}&quot;&gt;
+    &lt;ng-template swiperSlide *ngFor&#x3D;&quot;let questionGroup of questionGroups&quot;&gt;
       &lt;ion-content class&#x3D;&quot;ion-padding-bottom&quot; [fullscreen]&#x3D;&quot;true&quot;&gt;
         &lt;app-question-group-view [questionGroup]&#x3D;&quot;questionGroup&quot;&gt;&lt;/app-question-group-view&gt;
       &lt;/ion-content&gt;
-    &lt;/ion-slide&gt;
-  &lt;/ion-slides&gt;
+    &lt;/ng-template&gt;
+  &lt;/swiper&gt;
 
   &lt;div class&#x3D;&quot;controlButtons&quot;&gt;
     &lt;ion-button color&#x3D;&quot;secondary&quot; (click)&#x3D;&quot;gotoPrevSlide()&quot; [@ControlButtonSize]&#x3D;&quot;animationStateBackButton&quot;&gt;
@@ -889,7 +1083,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
       &lt;ion-icon name&#x3D;&quot;arrow-forward&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
       Weiter
     &lt;/ion-button&gt;
-    &lt;ion-button color&#x3D;&quot;success&quot; [routerLink]&#x3D;&quot;[&#x27;results&#x27;]&quot; routerDirection&#x3D;&quot;forward&quot; routerLinkActive&#x3D;&quot;router-link-active&quot; [@ControlButtonSize]&#x3D;&quot;animationStateResultButton&quot;&gt;
+    &lt;ion-button color&#x3D;&quot;success&quot; [routerLink]&#x3D;&quot;[&#x27;..&#x27;, &#x27;results&#x27;]&quot; routerDirection&#x3D;&quot;forward&quot; routerLinkActive&#x3D;&quot;router-link-active&quot; [@ControlButtonSize]&#x3D;&quot;animationStateResultButton&quot;&gt;
       &lt;ion-icon name&#x3D;&quot;golf-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
       Auswertung
     &lt;/ion-button&gt;
@@ -903,10 +1097,10 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
                 <p class="comment">
                     <code>./questionaire-tab.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.md ion-slides {
+                <pre class="line-numbers"><code class="language-scss">.md .swiper {
    height: calc(100% - 50px);
 }
-.ios ion-slides {
+.ios .swiper {
    height: calc(100% - 55px);
 }
 .swiper-slide {
@@ -950,7 +1144,7 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header [translucent]="false">  <ion-toolbar color="primary">    <ion-title>Fragebogen</ion-title>  </ion-toolbar></ion-header><ion-content [fullscreen]="true">  <ion-slides [pager]="true" (ionSlideDidChange)="setControlButtonsAnimationState()" [options]="{allowTouchMove:false}">    <ion-slide *ngFor="let questionGroup of questionGroups">      <ion-content class="ion-padding-bottom" [fullscreen]="true">        <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>      </ion-content>    </ion-slide>  </ion-slides>  <div class="controlButtons">    <ion-button color="secondary" (click)="gotoPrevSlide()" [@ControlButtonSize]="animationStateBackButton">      <ion-icon name="arrow-back" slot="start"></ion-icon>      Zurück    </ion-button>    <ion-button color="primary" (click)="gotoNextSlide()" [@ControlButtonSize]="animationStateNextButton">      <ion-icon name="arrow-forward" slot="start"></ion-icon>      Weiter    </ion-button>    <ion-button color="success" [routerLink]="[\'results\']" routerDirection="forward" routerLinkActive="router-link-active" [@ControlButtonSize]="animationStateResultButton">      <ion-icon name="golf-outline" slot="start"></ion-icon>      Auswertung    </ion-button>  </div></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-header [translucent]="false">  <ion-toolbar color="primary">    <ion-title>Fragebogen</ion-title>    <ion-buttons slot="end">      <ion-select interface="alert" interfaceOptions="" [(ngModel)]="questionaire" (ionChange)="changeQuestionaire(questionaire)">        <ion-select-option value="GENERAL">Generell</ion-select-option>        <ion-select-option value="DEVELOPER">Softwareentwicklung</ion-select-option>      </ion-select>    </ion-buttons>  </ion-toolbar></ion-header><ion-content [fullscreen]="true">  <swiper (slideChange)="setControlButtonsAnimationState()" [config]="{allowTouchMove:false}">    <ng-template swiperSlide *ngFor="let questionGroup of questionGroups">      <ion-content class="ion-padding-bottom" [fullscreen]="true">        <app-question-group-view [questionGroup]="questionGroup"></app-question-group-view>      </ion-content>    </ng-template>  </swiper>  <div class="controlButtons">    <ion-button color="secondary" (click)="gotoPrevSlide()" [@ControlButtonSize]="animationStateBackButton">      <ion-icon name="arrow-back" slot="start"></ion-icon>      Zurück    </ion-button>    <ion-button color="primary" (click)="gotoNextSlide()" [@ControlButtonSize]="animationStateNextButton">      <ion-icon name="arrow-forward" slot="start"></ion-icon>      Weiter    </ion-button>    <ion-button color="success" [routerLink]="[\'..\', \'results\']" routerDirection="forward" routerLinkActive="router-link-active" [@ControlButtonSize]="animationStateResultButton">      <ion-icon name="golf-outline" slot="start"></ion-icon>      Auswertung    </ion-button>  </div></ion-content></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailsPage', 'selector': 'app-details'},{'name': 'InfoTabPage', 'selector': 'app-info-tab'},{'name': 'QuestionaireTabPage', 'selector': 'app-questionaire-tab'},{'name': 'QuestionGroupViewComponent', 'selector': 'app-question-group-view'},{'name': 'QuestionViewComponent', 'selector': 'app-question-view'},{'name': 'ResultsPage', 'selector': 'app-results'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'QuestionaireTabPage'};
@@ -966,14 +1160,16 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -985,6 +1181,15 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
@@ -994,8 +1199,8 @@ export class QuestionaireTabPage implements OnInit, OnDestroy, AfterViewInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
